@@ -12,6 +12,7 @@ const ExploreTopicsList = () => {
   const DATA = [
     {
       id: 0,
+      borderTopRight: 0,
       title: "Sexual Health",
       description:
         "is your reproductive system healthy and are you having positive sexual experiences?",
@@ -33,7 +34,7 @@ const ExploreTopicsList = () => {
     {
       id: 1,
       title: "Mental Health",
-      description: "how do you think, feel or act?",
+      description: "are you having issues with how you think, feel or act?",
       card_style: StyleSheet.create({
         color_block: {
           backgroundColor: "#D2EDB0",
@@ -52,7 +53,7 @@ const ExploreTopicsList = () => {
     {
       id: 2,
       title: "Physical Health",
-      description: "how does your body feel?",
+      description: "are you having issues with how your body feels?",
       card_style: StyleSheet.create({
         color_block: {
           backgroundColor: "#D382B3",
@@ -130,52 +131,48 @@ const ExploreTopicsList = () => {
   return (
     <View>
       {/* Sexual Health card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.container1]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[0].title}</Text>
           <Text style={styles.text_details}>{DATA[0].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Mental Health card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.container2]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[1].title}</Text>
           <Text style={styles.text_details}>{DATA[1].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Mental Health card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.container3]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[2].title}</Text>
           <Text style={styles.text_details}>{DATA[2].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Nutrition card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.container4]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[3].title}</Text>
           <Text style={styles.text_details}>{DATA[3].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Primary care card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.container5]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[4].title}</Text>
-          <Text style={styles.text_details}>{DATA[4].description}</Text>
+          <Text style={styles.text_details_alternative}>{DATA[4].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Urgent care card */}
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container,  styles.container6]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_title}>{DATA[5].title}</Text>
-          <Text style={styles.text_details}>{DATA[5].description}</Text>
+          <Text style={styles.text_details_alternative}>{DATA[5].description}</Text>
         </View>
       </TouchableOpacity>
+
+
     </View>
   );
 };
@@ -195,6 +192,63 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: "#FFF",
   },
+  container1: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 40,
+    width: "70%",
+    backgroundColor: "#F6A6A6",
+
+  },
+  container2: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 0,
+    width: "70%",
+    alignSelf: "flex-end",
+    backgroundColor: "#5CA67F",
+
+  },
+  container3: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 40,
+    width: "70%",
+    backgroundColor: "#D382B3",
+
+  },
+  container4: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 0,
+    width: "70%",
+    alignSelf: "flex-end",
+    backgroundColor: "#95CCFF",
+
+  },
+  container5: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 0,
+    borderBottomLeftRadius: 0,
+    width: "70%",
+    backgroundColor: "#FBDC8E"
+
+  },
+  container6: {
+    borderTopRightRadius: 40,
+    borderTopLeftRadius: 40,
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 0,
+    width: "70%",
+    alignSelf: "flex-end",
+    backgroundColor: "#FFE4D8",
+
+  },
   container_text: {
     paddingLeft: 12,
     paddingTop: 5,
@@ -208,12 +262,23 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     marginTop: 5,
   },
+  /* For first four "Topics" bubbles to be white*/
   text_details: {
     flexWrap: "wrap",
-    color: "gray",
-    marginBottom: 5,
+    color: "white",
+    marginBottom: 3,
     marginRight: 20,
+    textAlign: "center"
   },
+  /* For last two "Topics" bubbles to be grey */
+  text_details_alternative: {
+    flexWrap: "wrap",
+    color: "grey",
+    marginBottom: 3,
+    marginRight: 20,
+    textAlign: "center"
+  },
+
   shadowProp: {
     shadowColor: "#171717",
     shadowOffset: { width: -1, height: 1 },
