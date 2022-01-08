@@ -144,7 +144,6 @@ export function DrawerContent(props) {
             <DrawerItem
               label="EVENTS"
               onPress={() => {}}
-              labelStyle={{fontWeight: 'bold', color: '#474646', fontSize:'14'}}
 
             />
 
