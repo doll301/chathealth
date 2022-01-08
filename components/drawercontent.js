@@ -63,7 +63,7 @@ export function DrawerContent(props) {
             <DrawerItem
                 label="HEALTH TOPICS"
                 onPress={() => {}}
-                labelStyle={{fontWeight: 'bold', color: '#474646', fontSize:'16'}}
+                labelStyle={{fontWeight: 'bold', color: '#474646', fontSize:'14'}}
               />
 
             <DrawerItem
