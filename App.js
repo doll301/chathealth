@@ -32,7 +32,7 @@ function Dashboard() {
     <Stack.Navigator  screenOptions={{
     headerShown: true
   }}>
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Home" options={{headerShown: false}} component={HomeScreen} />
       <Stack.Screen name="Events" component={EventScreen} />
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
