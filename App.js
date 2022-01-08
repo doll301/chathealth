@@ -6,16 +6,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
-import NewEventScreen from "./screens/NewEventScreen";
+import NewEventScreen from "./screens/NewEventScreen.js";
 
-{
-  /* Initializes component we can use to enable navigation between multiple screens. */
-}
+//Initializes component we can use to enable navigation between multiple screens.
 const Stack = createNativeStackNavigator();
 
-{
-  /* This is the entry point of our app!! */
-}
+// This is the entry point of our app!!
 export default function App() {
   return (
     <NavigationContainer>

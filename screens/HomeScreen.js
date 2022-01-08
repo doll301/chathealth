@@ -7,6 +7,7 @@ import {
   Text,
   ImageBackground,
   ScrollView,
+  SafeAreaView,
 } from "react-native";
 
 import TipList from "./../components/TipList.js";
@@ -25,7 +26,7 @@ const HomeScreen = ({ navigation }) => {
   ];
 
   return (
-    <View style={{ flexDirection: "column" }}>
+    <SafeAreaView style={{ flexDirection: "column" }}>
       <ScrollView style={styles.container}>
         {/* Stuff at the top wrapped in this View: 
           blue swoosh; welcome message; emergency banner */}
@@ -142,7 +143,7 @@ const HomeScreen = ({ navigation }) => {
         </View>
 
         {/* Explore topics list (uses custom ExploreTopicsList list) */}
-        <View>
+        <SafeAreaView>
           <Text
             style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
           >
@@ -150,7 +151,7 @@ const HomeScreen = ({ navigation }) => {
           </Text>
           {/* Our custom FlatList component for displaying events near you */}
           <ExploreTopicsList />
-        </View>
+        </SafeAreaView>
 
         {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
         <TouchableOpacity
@@ -169,7 +170,7 @@ const HomeScreen = ({ navigation }) => {
           <Image source={require("../assets/robot.png")} />
         </TouchableOpacity>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
