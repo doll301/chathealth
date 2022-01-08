@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={{ flexDirection: "column" }}>
       <ScrollView style={styles.container}>
-        {/* Stuff at the top wrapped in this View: 
+        {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
           {/* Blue swoosh at the top of the page */}
@@ -36,6 +36,14 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="stretch"
             style={{ width: "100%" }}
           />
+          <TouchableOpacity
+            style={styles.hamburgerwrapper}
+            onPress={() => navigation.toggleDrawer()}
+
+          >
+            <Image source={require("../assets/hamburger.png")} style={styles.hamburger}/>
+          </TouchableOpacity>
+
           {/* Welome message that uses the name of the user */}
           <Text style={styles.welcome_message}>
             Welcome back,{" "}
@@ -200,6 +208,18 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignSelf: "flex-end",
     position: "absolute",
+  },
+  hamburgerwrapper: {
+    paddingTop: 30,
+    paddingLeft:23,
+    justifyContent: "flex-start",
+    alignSelf: "flex-start",
+    position: "absolute",
+  },
+  hamburger :{
+    width: 25,
+    height: 17,
+
   },
   shadowProp: {
     shadowColor: "#171717",

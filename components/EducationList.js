@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
+
 const EducationList = () => {
   const DATA = [
     {
