@@ -37,12 +37,15 @@ const HomeScreen = ({ navigation }) => {
             resizeMode="stretch"
             style={{ width: "100%" }}
           />
+          {/* Hamburger Menu */}
           <TouchableOpacity
             style={styles.hamburgerwrapper}
             onPress={() => navigation.toggleDrawer()}
-
           >
-            <Image source={require("../assets/hamburger.png")} style={styles.hamburger}/>
+            <Image
+              source={require("../assets/hamburger.png")}
+              style={styles.hamburger}
+            />
           </TouchableOpacity>
 
           {/* Welome message that uses the name of the user */}
@@ -212,15 +215,14 @@ const styles = StyleSheet.create({
   },
   hamburgerwrapper: {
     paddingTop: 30,
-    paddingLeft:23,
+    paddingLeft: 23,
     justifyContent: "flex-start",
     alignSelf: "flex-start",
     position: "absolute",
   },
-  hamburger :{
+  hamburger: {
     width: 25,
     height: 17,
-
   },
   shadowProp: {
     shadowColor: "#171717",
