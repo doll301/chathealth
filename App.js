@@ -19,6 +19,9 @@ import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
 
+//Imports "General Health Tips" Screens
+import StressScreen from "./screens/tips/StressScreen.js";
+
 /* import firebase from "@react-native-firebase/app"; */
 
 {
@@ -42,6 +45,7 @@ function Dashboard() {
       <Stack.Screen name="Events" component={EventScreen} />
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
+      <Stack.Screen name="Stress" component={StressScreen} />
     </Stack.Navigator>
   );
 }

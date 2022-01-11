@@ -19,7 +19,14 @@ import {
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
+import { useNavigation } from "@react-navigation/native";
+
+
+
+
 export function DrawerContent(props) {
+  const navigation = useNavigation();
+
   return (
     <View style={{ flex: 1 }}>
       <DrawerContentScrollView {...props}>
@@ -40,7 +47,7 @@ export function DrawerContent(props) {
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
               label="PROFILE"
-              onPress={() => {}}
+              onPress={() => navigation.navigate("")}
               labelStyle={{
                 fontWeight: "bold",
                 color: "#474646",
@@ -49,7 +56,7 @@ export function DrawerContent(props) {
             />
             <DrawerItem
               label="DASHBOARD"
-              onPress={() => {}}
+              onPress={() => navigation.navigate("Home")}
               labelStyle={{
                 fontWeight: "bold",
                 color: "#474646",
