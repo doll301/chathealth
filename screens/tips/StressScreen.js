@@ -10,14 +10,10 @@ import {
   SafeAreaView,
 } from "react-native";
 
-import TipList from "../../components/TipList.js";
-import HealthcareList from "../../components/HealthcareList.js";
-import UrgentCareList from "../../components/UrgentCareList.js";
-import EventsNearYou from "../../components/EventsNearYou.js";
-import EducationList from "../../components/EducationList.js";
-import ExploreTopicsList from "../../components/ExploreTopics.js";
+import ProfessionalList from "../../components/Anxiety/ProfessionalList.js";
+import HomeList from "../../components/Anxiety/HomeList.js";
 
-const HomeScreen = ({ navigation }) => {
+const StressScreen = ({ navigation }) => {
   const USER_DATA = [
     {
       id: 0,
@@ -73,65 +69,51 @@ const HomeScreen = ({ navigation }) => {
         {/* General Health Tips list (uses custom TipList component) */}
         <View style={{width: "85%"}}>
           <Text
-            style={{ left: 20, top: 20, color: "#000000", fontSize: 21, marginTop: 20, fontWeight: "600"}}
+            style={{ left: 20, top: 20, color: "#000000", fontSize: 21, marginTop: 20, fontWeight: "600",}}
           >
-            SLEEP
+            ANXIETY
           </Text>
           <Text
-            style={{ left: 20, top: 30, color: "#000000", fontSize: 15, fontWeight: "300"}}
+            style={{ left: 20, top: 30, marginBottom: 15, color: "#000000", fontSize: 15, fontWeight: "300", fontStyle: "italic",}}
           >
-          Sleep is critical to our mental-health, well-being, and every day functionality. The UHC provides several resources on how we can all work to improve our sleep habits along with professional resources to guide our wellness journey.
-          </Text>
+            As a college student, it is not uncommon to endure anxiety when it comes to issues with school, finances, or work. The UHC provides professional services for treating anxiety as well as tips on how to regulate your anxiety at home.          </Text>
         </View>
 
-        {/* Your Healthcare list (uses custom HealthcareList component) */}
-        <View style={{ marginVertical: 20 }}>
 
-          <View style={{ backgroundColor: "#E4F3FB", paddingBottom: 20 }}>
+        <Text
+          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
+        >
+          Where can I go for professional help?
+        </Text>
+
+        {/* Your Healthcare list (uses custom HealthcareList component) */}
+        <View style={{ marginTop: 20 }}>
+
+          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
             {/* The little ovals above the list (see Figma) */}
             {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
             {/* Our custom FlatList component for displaying healthcare cards in a list */}
-            <HealthcareList />
+            <ProfessionalList />
+          </View>
+        </View>
+        <Text
+          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
+        >
+          How can I regulate my anxiety at home?
+        </Text>
+
+        <View style={{ marginVertical: 20 }}>
+
+          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20 }}>
+            {/* The little ovals above the list (see Figma) */}
+            {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
+            {/* Our custom FlatList component for displaying healthcare cards in a list */}
+            <HomeList />
           </View>
         </View>
 
-        {/* Explore Urgent Care Near You list (uses custom UrgentCareList component) */}
-        <View>
-          <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
-          >
-            Explore Urgent Care Near You
-          </Text>
-          {/* Our custom FlatList component for displaying tips */}
-          <UrgentCareList />
-        </View>
 
-        {/* Events Near You list (uses custom EventsNearYou list) */}
-        <View>
-          <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
-          >
-            Events Near You
-          </Text>
-          {/* Our custom FlatList component for displaying events near you */}
-          <EventsNearYou />
-        </View>
-
-        {/* Education from around campus list (uses custom EducationList list) */}
-
-        {/* Explore topics list (uses custom ExploreTopicsList list) */}
-
-        {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
       </ScrollView>
-      <View style={styles.bottom_bar}>
-        {/* Robot button at bottom of screen to navigate to the chat bot */}
-        <TouchableOpacity
-          style={styles.bot_button}
-          onPress={() => navigation.navigate("ChatBot")}
-        >
-          <Image source={require("../../assets/robot.png")} />
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
 };
@@ -139,30 +121,6 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-  },
-  events_button: {
-    backgroundColor: "#e0ded7",
-    borderRadius: 20,
-    padding: 10,
-    margin: 70,
-    fontWeight: "bold",
-    width: 145,
-    justifyContent: "flex-end",
-  },
-  bottom_bar: {
-    backgroundColor: "#5A5B68",
-    position: "absolute",
-    height: "9.5%",
-    width: "100%",
-    justifyContent: "flex-end",
-    bottom: 0,
-  },
-  bot_button: {
-    borderRadius: 20,
-    padding: 15,
-    justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    position: "absolute",
   },
   hamburgerwrapper: {
     paddingTop: 45,
@@ -174,12 +132,6 @@ const styles = StyleSheet.create({
   hamburger: {
     width: 25,
     height: 17,
-  },
-  shadowProp: {
-    shadowColor: "#171717",
-    shadowOffset: { width: -2, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 5,
   },
   general_health_tips: {
     position: "absolute",
@@ -197,15 +149,6 @@ const styles = StyleSheet.create({
     padding: 3,
     alignItems: "center",
   },
-  health_bubble: {
-    backgroundColor: "#fff",
-    borderWidth: 1,
-    borderStyle: "solid",
-    borderColor: "#605c6c",
-    borderRadius: 50,
-    margin: 5,
-    padding: 6,
-  },
 });
 
-export default HomeScreen;
+export default StressScreen;

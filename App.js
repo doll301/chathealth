@@ -45,7 +45,7 @@ function Dashboard() {
       <Stack.Screen name="Events" component={EventScreen} />
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
-      <Stack.Screen name="Stress" component={StressScreen} />
+      <Stack.Screen name="Stress" options={{ headerShown: false }} component={StressScreen}/>
     </Stack.Navigator>
   );
 }
