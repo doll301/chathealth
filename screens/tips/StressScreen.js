@@ -24,10 +24,7 @@ const StressScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
       <ScrollView style={styles.container}>
-        {/* Stuff at the top wrapped in this View:
-          blue swoosh; welcome message; emergency banner */}
         <View>
-          {/* Blue swoosh at the top of the page */}
           <Image
             source={require("../../assets/grey-header.png")}
             resizeMode="stretch"
@@ -44,7 +41,6 @@ const StressScreen = ({ navigation }) => {
             />
           </TouchableOpacity>
 
-          {/* Welome message that uses the name of the user */}
           <Text style={styles.general_health_tips}>
             General Health Tips
           </Text>
@@ -66,7 +62,6 @@ const StressScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* General Health Tips list (uses custom TipList component) */}
         <View style={{width: "85%"}}>
           <Text
             style={{ left: 20, top: 20, color: "#000000", fontSize: 21, marginTop: 20, fontWeight: "600",}}
@@ -86,13 +81,9 @@ const StressScreen = ({ navigation }) => {
           Where can I go for professional help?
         </Text>
 
-        {/* Your Healthcare list (uses custom HealthcareList component) */}
         <View style={{ marginTop: 20 }}>
 
           <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
-            {/* The little ovals above the list (see Figma) */}
-            {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
-            {/* Our custom FlatList component for displaying healthcare cards in a list */}
             <ProfessionalList />
           </View>
         </View>
@@ -105,9 +96,6 @@ const StressScreen = ({ navigation }) => {
         <View style={{ marginVertical: 20 }}>
 
           <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20 }}>
-            {/* The little ovals above the list (see Figma) */}
-            {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
-            {/* Our custom FlatList component for displaying healthcare cards in a list */}
             <HomeList />
           </View>
         </View>
@@ -123,7 +111,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   hamburgerwrapper: {
-    paddingTop: 45,
+    paddingTop: 25,
     paddingLeft: 23,
     justifyContent: "flex-start",
     alignSelf: "flex-start",

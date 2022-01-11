@@ -57,7 +57,7 @@ const EventScreen = ({ navigation }) => {
   ];
 
   {
-    /* Component for small purple banner that reads "VIRTUAL". 
+    /* Component for small purple banner that reads "VIRTUAL".
        Will be rendered based on the 'virtual' field.
        DOES NOT WORK YET */
   }
@@ -70,7 +70,7 @@ const EventScreen = ({ navigation }) => {
   };
 
   {
-    /* Decides whether or not the virtual banner will be displayed. 
+    /* Decides whether or not the virtual banner will be displayed.
       DOES NOT WORK YET*/
   }
   function DisplayVirtual({ virtual }) {
@@ -81,7 +81,7 @@ const EventScreen = ({ navigation }) => {
   }
 
   {
-    /* This is the component that is repeated. Props (data from EVENT_DATA) from 
+    /* This is the component that is repeated. Props (data from EVENT_DATA) from
        renderItem are passed in, and this function will use those props to render
        the image and text to be found in the repeated event card. */
   }
