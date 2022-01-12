@@ -19,11 +19,7 @@ import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
 
-<<<<<<< HEAD
 //import firebase from "@react-native-firebase/app";
-=======
-/* import firebase from "@react-native-firebase/app"; */
->>>>>>> 3625e9e65ebb73eea9491a3ec77e0d4fa0188e13
 
 {
   /* Initializes component we can use to enable navigation between multiple screens. */
