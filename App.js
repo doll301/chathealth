@@ -19,7 +19,10 @@ import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
 
-//import firebase from "@react-native-firebase/app";
+//Imports "General Health Tips" Screens
+import StressScreen from "./screens/tips/StressScreen.js";
+
+/* import firebase from "@react-native-firebase/app"; */
 
 {
   /* Initializes component we can use to enable navigation between multiple screens. */
@@ -42,6 +45,11 @@ function Dashboard() {
       <Stack.Screen name="Events" component={EventScreen} />
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
+      <Stack.Screen
+        name="Stress"
+        options={{ headerShown: false }}
+        component={StressScreen}
+      />
     </Stack.Navigator>
   );
 }

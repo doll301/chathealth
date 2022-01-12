@@ -6,34 +6,45 @@ import {
   Text,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
+
+
 
 const TipList = () => {
   const TIP_DATA = [
     {
       id: "00",
       title: "Stress and Anxiety",
+      link: "Stress",
     },
     {
       id: "01",
       title: "Sleep",
+      link: "HealthTips",
     },
     {
       id: "02",
       title: "Cold, Flu, Sore Throat",
+      link: "HealthTips",
     },
     {
       id: "03",
       title: "Vaccination",
+      link: "HealthTips",
     },
     {
       id: "04",
       title: "Sexual Health",
+      link: "HealthTips",
     },
   ];
 
   /* Simply renders a pressable component with the title displayed */
-  const Item = ({ title }) => (
-    <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+  const navigation = useNavigation();
+
+  const Item = ({ title, link }) => (
+    <TouchableOpacity style={[styles.container, styles.shadowProp]}  onPress={() => navigation.navigate("Dashboard", {screen: "Stress"})}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
