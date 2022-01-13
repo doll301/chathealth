@@ -27,7 +27,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
-      <ScrollView style={styles.container}>
         {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
@@ -70,6 +69,7 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
+        <ScrollView style={styles.container}>
 
         {/* General Health Tips list (uses custom TipList component) */}
         <View>
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     height: "9.5%",
     width: "100%",
     justifyContent: "flex-end",
-    bottom: 0,
+    bottom: 150,
   },
   bot_button: {
     borderRadius: 20,
