@@ -34,20 +34,21 @@ export function DrawerContent(props) {
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 20 }}>
               <Avatar.Image
-                source={require("../assets/veeraj.png")}
-                size={60}
+                source={require("../assets/testudo.png")}
+                size={72}
               />
-              <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title>Veeraj Shah</Title>
+              <View style={{ marginLeft: 13, flexDirection: "column" }}>
+                <Title>Testudo Terrapin</Title>
                 <Caption style={styles.caption}>University of Maryland</Caption>
+                <Caption style={styles.profilebutton} onPress={() => navigation.navigate("Profile")}>View Profile</Caption>
               </View>
             </View>
           </View>
 
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
-              label="PROFILE"
-              onPress={() => navigation.navigate("")}
+              label="DASHBOARD"
+              onPress={() => navigation.navigate("Home")}
               labelStyle={{
                 fontWeight: "bold",
                 color: "#474646",
@@ -55,8 +56,8 @@ export function DrawerContent(props) {
               }}
             />
             <DrawerItem
-              label="DASHBOARD"
-              onPress={() => navigation.navigate("Home")}
+              label="EVENTS"
+              onPress={() => navigation.navigate("Events")}
               labelStyle={{
                 fontWeight: "bold",
                 color: "#474646",
@@ -202,6 +203,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 14,
   },
+  profilebutton: {
+    fontSize: 14,
+    fontWeight: "bold",
+    lineHeight: 22,
+  },
+
 
   row: {
     marginTop: 20,

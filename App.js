@@ -21,6 +21,7 @@ import NewEventScreen from "./screens/NewEventScreen.js";
 
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
+import ProfileScreen from "./screens/ProfileScreen.js";
 
 /* import firebase from "@react-native-firebase/app"; */
 
@@ -54,6 +55,23 @@ function Dashboard() {
   );
 }
 
+function Profile() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Home"
+        options={{ headerShown: false }}
+        component={ProfileScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
 // This is the entry point of our app!!
 export default function App() {
   return (
@@ -63,6 +81,8 @@ export default function App() {
         drawerContent={(props) => <DrawerContent {...props} />}
       >
         <Drawer.Screen name="Dashboard" component={Dashboard} />
+        <Drawer.Screen name="Profile" component={Profile} />
+
       </Drawer.Navigator>
     </NavigationContainer>
   );
