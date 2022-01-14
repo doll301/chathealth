@@ -23,7 +23,6 @@ import { useNavigation } from "@react-navigation/native";
 
 
 
-
 export function DrawerContent(props) {
   const navigation = useNavigation();
 
@@ -33,14 +32,19 @@ export function DrawerContent(props) {
         <View styles={styles.DrawerContent}>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 20 }}>
+
+              <TouchableOpacity onPress={() => navigation.navigate('Profile', { screen: 'Profile' })}>
               <Avatar.Image
                 source={require("../assets/testudo.png")}
                 size={72}
               />
+              </TouchableOpacity>
+
               <View style={{ marginLeft: 13, flexDirection: "column" }}>
                 <Title>Testudo Terrapin</Title>
                 <Caption style={styles.caption}>University of Maryland</Caption>
-                <Caption style={styles.profilebutton} onPress={() => navigation.navigate("Profile")}>View Profile</Caption>
+                <Caption style={styles.profilebutton}
+                onPress={() => navigation.navigate('Profile', { screen: 'Profile' })}>View Profile</Caption>
               </View>
             </View>
           </View>
@@ -122,25 +126,6 @@ export function DrawerContent(props) {
             />
           </Drawer.Section>
 
-          <Drawer.Section style={styles.drawerSection}>
-            <DrawerItem label="EVENTS" onPress={() => {}} />
-
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="calendar" color={"grey"} size={30} />
-              )}
-              label="Saved Events"
-              onPress={() => {}}
-            />
-
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="map-marker" color={"grey"} size={30} />
-              )}
-              label="By Your School"
-              onPress={() => {}}
-            />
-          </Drawer.Section>
 
           <Drawer.Section style={styles.drawerSection}>
             <DrawerItem
@@ -190,7 +175,7 @@ const styles = StyleSheet.create({
   },
 
   userInfoSection: {
-    paddingLeft: 20,
+    paddingLeft: 13,
     marginBottom: 20,
   },
   title: {
