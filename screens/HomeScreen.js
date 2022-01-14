@@ -205,10 +205,10 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   bottom_bar: {
-    backgroundColor: "#5A5B68",
     position: "absolute",
     height: "9.5%",
-    width: "100%",
+    width: "40%",
+    alignSelf: "flex-end",
     justifyContent: "flex-end",
     bottom: 150,
   },
