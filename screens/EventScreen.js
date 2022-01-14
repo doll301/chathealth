@@ -116,6 +116,16 @@ const EventScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       {/* Blue swoosh at the top of the page */}
+      <TouchableOpacity
+        style={styles.backbuttonwrapper}
+        onPress={() => navigation.navigate("Home")}
+      >
+        <Text
+          style={styles.backbutton}>
+          ◀︎ Home
+          </Text>
+      </TouchableOpacity>
+
       <Image
         source={require("../assets/blue-wave.png")}
         resizeMode="stretch"
@@ -151,6 +161,25 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     backgroundColor: "#fff",
   },
+  backbuttonwrapper: {
+    marginTop: 35,
+    marginLeft: 13,
+    height: 24,
+    width: 84,
+    borderRadius: 40,
+    backgroundColor: "#7d7d7d",
+    justifyContent: "flex-start",
+    alignSelf: "flex-start",
+    position: "absolute",
+    zIndex: 2,
+  },
+  backbutton: {
+    color: "white",
+    top: 3,
+    fontSize: 14,
+    paddingHorizontal: 13,
+  },
+
   card: {
     flex: 1,
     alignItems: "center",
@@ -169,10 +198,10 @@ const styles = StyleSheet.create({
   add_button: {
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#605c6c",
+    backgroundColor: "#7d7d7d",
     borderWidth: 2,
     borderStyle: "solid",
-    borderColor: "#605c6c",
+    borderColor: "#7d7d7d",
     borderRadius: 5,
     width: 200,
     height: 50,
