@@ -21,7 +21,7 @@ const ProfileScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flexDirection: "column", height: "100%",}}>
-      <ScrollView style={styles.container}>
+      <ScrollView style={styles.container} scrollEnabled={false}>
 
           {/* Hamburger Menu */}
           <TouchableOpacity
