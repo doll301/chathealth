@@ -18,6 +18,7 @@ import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
+import EmergencyScreen from "./screens/EmergencyScreen.js";
 
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
@@ -43,9 +44,16 @@ function DashboardStack() {
         options={{ headerShown: false }}
         component={HomeScreen}
       />
-      <Stack.Screen name="Events" component={EventScreen} />
+      <Stack.Screen name="Events" component={EventScreen}
+      options={{ headerShown: false }}/>
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
+      <Stack.Screen name="Emergency"
+      options={{ headerShown: false }}
+
+      component={EmergencyScreen} />
+
+
       <Stack.Screen
         name="Stress"
         options={{ headerShown: false }}
@@ -82,6 +90,8 @@ export default function App() {
       >
         <Drawer.Screen name="Dashboard" component={DashboardStack} />
         <Drawer.Screen name="Profile" component={ProfileStack} />
+
+
 
       </Drawer.Navigator>
     </NavigationContainer>
