@@ -31,7 +31,7 @@ import ProfileScreen from "./screens/ProfileScreen.js";
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function Dashboard() {
+function DashboardStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -55,7 +55,7 @@ function Dashboard() {
   );
 }
 
-function Profile() {
+function ProfileStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -63,7 +63,7 @@ function Profile() {
       }}
     >
       <Stack.Screen
-        name="Home"
+        name="Profile"
         options={{ headerShown: false }}
         component={ProfileScreen}
       />
@@ -80,8 +80,8 @@ export default function App() {
         screenOptions={{ headerShown: false }}
         drawerContent={(props) => <DrawerContent {...props} />}
       >
-        <Drawer.Screen name="Dashboard" component={Dashboard} />
-        <Drawer.Screen name="Profile" component={Profile} />
+        <Drawer.Screen name="Dashboard" component={DashboardStack} />
+        <Drawer.Screen name="Profile" component={ProfileStack} />
 
       </Drawer.Navigator>
     </NavigationContainer>
