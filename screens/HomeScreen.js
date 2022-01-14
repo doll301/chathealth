@@ -17,6 +17,9 @@ import EventsNearYou from "./../components/EventsNearYou.js";
 import EducationList from "./../components/EducationList.js";
 import ExploreTopicsList from "./../components/ExploreTopics.js";
 
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
+
 const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
     {
@@ -55,7 +58,9 @@ const HomeScreen = ({ navigation }) => {
 
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>
-            <TouchableOpacity style={styles.red_banner}>
+            <TouchableOpacity style={styles.red_banner}
+            onPress={() => navigation.navigate("Emergency")}
+            >
               <Text
                 style={{
                   color: "#fff",
@@ -63,6 +68,7 @@ const HomeScreen = ({ navigation }) => {
                   fontSize: 14,
                   textDecorationLine: "underline",
                 }}
+
               >
                 Having an emergency?
               </Text>
