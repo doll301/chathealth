@@ -8,33 +8,40 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import * as WebBrowser from 'expo-web-browser';
+
 
 const UrgentCareList = () => {
   const DATA = [
     {
       id: "20",
       title: "Sutter Health",
+      url: "",
       img: require("../assets/urgent-cares/sutter.png"),
       distance: 2.1,
     },
     {
       id: "21",
       title: "Carbon",
+      url:"",
       img: require("../assets/urgent-cares/carbon.png"),
       distance: 1.6,
     },
     {
       id: "22",
       title: "Mayo Clinic",
+      url: "",
       img: require("../assets/urgent-cares/mayo.png"),
       distance: 13.2,
     },
   ];
 
   /* Simply renders a pressable component with the title displayed */
-  const Item = ({ title, img, distance }) => (
+  const Item = ({ title, url, img, distance }) => (
     <View>
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <TouchableOpacity style={[styles.container, styles.shadowProp]}
+      onPress={() => {WebBrowser.openBrowserAsync(url)}}
+      >
         <View style={{ flexDirection: "row" }}>
           <Image source={img} />
           <Text style={styles.text}>{title}</Text>
@@ -47,7 +54,7 @@ const UrgentCareList = () => {
   );
 
   const renderItem = ({ item }) => (
-    <Item title={item.title} img={item.img} distance={item.distance} />
+    <Item title={item.title} url={item.url} img={item.img} distance={item.distance} />
   );
 
   return (
