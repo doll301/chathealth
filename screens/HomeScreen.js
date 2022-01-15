@@ -1,4 +1,4 @@
-import React from "react";
+import {React, useRef} from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -18,6 +18,8 @@ import EventsNearYou from "./../components/EventsNearYou.js";
 import EducationList from "./../components/EducationList.js";
 import ExploreTopicsList from "./../components/ExploreTopics.js";
 
+import { useScrollToTop } from '@react-navigation/native';
+
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 
@@ -29,11 +31,25 @@ const HomeScreen = ({ navigation }) => {
     },
   ];
 
+
+
+  const scrollRef = useRef();
+
+const onPressTouch = () => {
+  scrollRef.current?.scrollTo({
+    y: 0,
+    animated: true,
+  });
+}
+
+
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
         {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
+
+        <TouchableOpacity onPress={onPressTouch}>
           {/* Blue swoosh at the top of the page */}
           <Image
             source={require("../assets/blue-wave.png")}
@@ -57,6 +73,7 @@ const HomeScreen = ({ navigation }) => {
             <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
           </Text>
 
+          </TouchableOpacity>
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>
             <TouchableOpacity style={styles.red_banner}
@@ -76,7 +93,7 @@ const HomeScreen = ({ navigation }) => {
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView style={styles.container}>
+        <ScrollView ref={scrollRef} style={styles.container}>
 
         {/* General Health Tips list (uses custom TipList component) */}
         <View>
@@ -172,13 +189,10 @@ const HomeScreen = ({ navigation }) => {
         </SafeAreaView>
 
         {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
-        <TouchableOpacity
-          style={styles.events_button}
-          onPress={() => navigation.navigate("Events")}
-        >
-          <Text>Go to Events Page!</Text>
-        </TouchableOpacity>
+
       </ScrollView>
+
+
       <View style={styles.bottom_bar}>
         {/* Robot button at bottom of screen to navigate to the chat bot */}
         <TouchableOpacity
@@ -188,6 +202,8 @@ const HomeScreen = ({ navigation }) => {
           <Image source={require("../assets/robot.png")} />
         </TouchableOpacity>
       </View>
+
+
     </SafeAreaView>
   );
 };
