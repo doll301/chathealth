@@ -8,6 +8,7 @@ import {
   ImageBackground,
   ScrollView,
   SafeAreaView,
+  Linking,
 } from "react-native";
 
 import TipList from "./../components/TipList.js";
