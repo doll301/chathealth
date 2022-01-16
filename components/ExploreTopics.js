@@ -129,7 +129,7 @@ const ExploreTopicsList = () => {
   ];
 
   return (
-    <View style={{paddingBottom: 200,}}>
+    <View style={{paddingBottom: 340,}}>
       {/* Sexual Health card */}
       <TouchableOpacity style={[styles.container, styles.container1]}>
         <View style={styles.container_text}>

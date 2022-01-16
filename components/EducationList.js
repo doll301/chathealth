@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+import * as WebBrowser from 'expo-web-browser';
 import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 
@@ -17,6 +18,7 @@ const EducationList = () => {
       id: "0",
       title:
         "A Guide for Transgender, Non-Binary, and Gender Non-Conforming Terps",
+      url: "https://health.umd.edu/sites/default/files/inline-files/Guide-links.pdf",
       group: "University Health Center",
       card_style: StyleSheet.create({
         container: {
@@ -62,6 +64,7 @@ const EducationList = () => {
     {
       id: "1",
       title: "Wellness Toolkit",
+      url: "https://health.umd.edu/sites/default/files/inline-files/Wellness%20Toolkit%20_Revised%20October%202021%20%281%29_0.pdf",
       group: "University Health Center",
       img: require("../assets/education-list/orange-rectangle.png"),
       card_style: StyleSheet.create({
@@ -108,6 +111,7 @@ const EducationList = () => {
     {
       id: "2",
       title: "Healthy Terps Newsletter: October",
+      url: "https://www.canva.com/design/DAEJTllSHAk/XzAc21qN5xgoKeP7cgjhmA/view?utm_content=DAEJTllSHAk&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1",
       group: "Student Health Advisory Committee",
       img: require("../assets/education-list/blue-rectangle.png"),
       card_style: StyleSheet.create({
@@ -152,9 +156,13 @@ const EducationList = () => {
     },
   ];
 
+
+
   /* Simply renders a pressable component with the title displayed */
-  const Item = ({ title, group, card_style }) => (
-    <TouchableOpacity style={[card_style.container, styles.shadowProp]}>
+  const Item = ({ title, url, group, card_style}) => (
+    <TouchableOpacity style={[card_style.container, styles.shadowProp]}
+    onPress={() => {WebBrowser.openBrowserAsync(url)}}
+    >
       <View style={card_style.container_title}>
         <Text style={card_style.text_title}>{title}</Text>
       </View>
@@ -165,7 +173,7 @@ const EducationList = () => {
   );
 
   const renderItem = ({ item }) => (
-    <Item title={item.title} group={item.group} card_style={item.card_style} />
+    <Item title={item.title} url={item.url} group={item.group} card_style={item.card_style} />
   );
 
   return (

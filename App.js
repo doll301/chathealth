@@ -14,6 +14,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "./components/drawercontent";
 
+import OnboardingScreen from "./screens/OnboardingScreen.js"
+
 import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
@@ -86,12 +88,12 @@ export default function App() {
     <NavigationContainer>
       <Drawer.Navigator
         screenOptions={{ headerShown: false }}
-        drawerContent={(props) => <DrawerContent {...props} />}
-      >
-        <Drawer.Screen name="Dashboard" component={DashboardStack} />
-        <Drawer.Screen name="Profile" component={ProfileStack} />
+        drawerContent={(props) => <DrawerContent {...props} />}>
 
-
+          <Drawer.Screen name="Onboarding" component={OnboardingScreen}
+          options={{ swipeEnabled: false }}/>
+          <Drawer.Screen name="Dashboard" component={DashboardStack} />
+          <Drawer.Screen name="Profile" component={ProfileStack} />
 
       </Drawer.Navigator>
     </NavigationContainer>
