@@ -18,9 +18,11 @@ import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen.js";
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
+import EmergencyScreen from "./screens/EmergencyScreen.js";
 
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
+import ProfileScreen from "./screens/ProfileScreen.js";
 
 /* import firebase from "@react-native-firebase/app"; */
 
@@ -30,7 +32,7 @@ import StressScreen from "./screens/tips/StressScreen.js";
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
 
-function Dashboard() {
+function DashboardStack() {
   return (
     <Stack.Navigator
       screenOptions={{
@@ -42,9 +44,16 @@ function Dashboard() {
         options={{ headerShown: false }}
         component={HomeScreen}
       />
-      <Stack.Screen name="Events" component={EventScreen} />
+      <Stack.Screen name="Events" component={EventScreen}
+      options={{ headerShown: false }}/>
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
+      <Stack.Screen name="Emergency"
+      options={{ headerShown: false }}
+
+      component={EmergencyScreen} />
+
+
       <Stack.Screen
         name="Stress"
         options={{ headerShown: false }}
@@ -54,6 +63,23 @@ function Dashboard() {
   );
 }
 
+function ProfileStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Profile"
+        options={{ headerShown: false }}
+        component={ProfileScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+
 // This is the entry point of our app!!
 export default function App() {
   return (
@@ -62,7 +88,11 @@ export default function App() {
         screenOptions={{ headerShown: false }}
         drawerContent={(props) => <DrawerContent {...props} />}
       >
-        <Drawer.Screen name="Dashboard" component={Dashboard} />
+        <Drawer.Screen name="Dashboard" component={DashboardStack} />
+        <Drawer.Screen name="Profile" component={ProfileStack} />
+
+
+
       </Drawer.Navigator>
     </NavigationContainer>
   );

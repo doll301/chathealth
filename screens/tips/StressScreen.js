@@ -30,15 +30,14 @@ const StressScreen = ({ navigation }) => {
             resizeMode="stretch"
             style={{ width: "100%" }}
           />
-          {/* Hamburger Menu */}
           <TouchableOpacity
-            style={styles.hamburgerwrapper}
-            onPress={() => navigation.toggleDrawer()}
+            style={styles.backbuttonwrapper}
+            onPress={() => navigation.navigate("Home")}
           >
-            <Image
-              source={require("../../assets/hamburger.png")}
-              style={styles.hamburger}
-            />
+            <Text
+              style={styles.backbutton}>
+              ◀︎ Home
+              </Text>
           </TouchableOpacity>
 
           <Text style={styles.general_health_tips}>
@@ -110,20 +109,27 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
   },
-  hamburgerwrapper: {
-    paddingTop: 25,
-    paddingLeft: 23,
+  backbuttonwrapper: {
+    marginTop: 15,
+    marginLeft: 13,
+    height: 24,
+    width: 84,
+    borderRadius: 40,
+    backgroundColor: "#7d7d7d",
     justifyContent: "flex-start",
     alignSelf: "flex-start",
     position: "absolute",
   },
-  hamburger: {
-    width: 25,
-    height: 17,
+  backbutton: {
+    color: "white",
+    top: 3,
+    fontSize: 14,
+    paddingHorizontal: 13,
   },
+
   general_health_tips: {
     position: "absolute",
-    top: 40,
+    top: 55,
     left: 0,
     width: "100%",
     fontSize: 22,

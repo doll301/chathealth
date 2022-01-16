@@ -17,6 +17,9 @@ import EventsNearYou from "./../components/EventsNearYou.js";
 import EducationList from "./../components/EducationList.js";
 import ExploreTopicsList from "./../components/ExploreTopics.js";
 
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+
+
 const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
     {
@@ -27,7 +30,6 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
-      <ScrollView style={styles.container}>
         {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
@@ -56,7 +58,9 @@ const HomeScreen = ({ navigation }) => {
 
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>
-            <TouchableOpacity style={styles.red_banner}>
+            <TouchableOpacity style={styles.red_banner}
+            onPress={() => navigation.navigate("Emergency")}
+            >
               <Text
                 style={{
                   color: "#fff",
@@ -64,12 +68,14 @@ const HomeScreen = ({ navigation }) => {
                   fontSize: 14,
                   textDecorationLine: "underline",
                 }}
+
               >
                 Having an emergency?
               </Text>
             </TouchableOpacity>
           </View>
         </View>
+        <ScrollView style={styles.container}>
 
         {/* General Health Tips list (uses custom TipList component) */}
         <View>
@@ -199,12 +205,12 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   bottom_bar: {
-    backgroundColor: "#5A5B68",
     position: "absolute",
     height: "9.5%",
-    width: "100%",
+    width: "40%",
+    alignSelf: "flex-end",
     justifyContent: "flex-end",
-    bottom: 0,
+    bottom: 150,
   },
   bot_button: {
     borderRadius: 20,
