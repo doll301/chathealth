@@ -33,14 +33,14 @@ const PreOnboardingScreen = ({ navigation }) => {
 
         <Text style={{top: 190, fontWeight: "600", paddingHorizontal: 20, fontSize: 26, textAlign: "center"}}>Before we begin, are you facing an emergency?</Text>
 
-        <View style={{height: 55, width: 170, paddingVertical: 12, paddingHorizontal: 10, backgroundColor: "#EBA9A8", borderRadius: 100, borderWidth: 2, borderColor: "#D97470", position: "relative",top: 250, alignSelf: "center"}}>
-          <TouchableOpacity  onPress={() => navigation.navigate('Dashboard', {screen: 'Emergency'})}>
+        <View style={{height: 55, width: 170, paddingVertical: 12, paddingHorizontal: 10, backgroundColor: "#EBA9A8", borderRadius: 100, borderWidth: 2, borderColor: "#D97470", position: "relative",top: 250, alignSelf: "center", justifyContent: "center"}}>
+          <TouchableOpacity  onPress={() => navigation.navigate('Dashboard', {screen: 'Emergency'})} style={{height: 50, justifyContent: "center",}}>
             <Text style={{fontSize: 11, color: "black", fontWeight: "bold", textAlign: "center",}}>YES, TAKE ME TO EMERGENCY SERVICES</Text>
           </TouchableOpacity>
         </View>
 
-        <View style={{height: 55, width: 170, paddingVertical: 18, paddingHorizontal: 10, backgroundColor: "#D8ECB6", borderRadius: 100, borderWidth: 2, borderColor: "#95B798", position: "relative",top: 265, alignSelf: "center"}}>
-          <TouchableOpacity  onPress={() => navigation.navigate('Onboarding')}>
+        <View style={{height: 55, width: 170, paddingVertical: 18, paddingHorizontal: 10, backgroundColor: "#D8ECB6", borderRadius: 100, borderWidth: 2, borderColor: "#95B798", position: "relative",top: 265, alignSelf: "center", justifyContent: "center"}}>
+          <TouchableOpacity  onPress={() => navigation.navigate('Onboarding')} style={{height: 50, justifyContent: "center",}}>
             <Text style={{fontSize: 11, color: "black", fontWeight: "bold", textAlign: "center",}}>NO, LET'S BEGIN</Text>
           </TouchableOpacity>
         </View>
