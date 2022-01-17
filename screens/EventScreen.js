@@ -162,7 +162,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   backbuttonwrapper: {
-    marginTop: 35,
+    marginTop: 55,
     marginLeft: 13,
     height: 24,
     width: 80,

@@ -75,9 +75,20 @@ const EventsNearYou = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         horizontal={true}
-        ListFooterComponent={NewEventButton}
-        ListFooterComponentStyle={styles.footer_component}
       />
+      <TouchableOpacity onPress={() => navigation.navigate("Events")} style={styles.footer_component}>
+        <Text
+          style={{
+            color: "#fff",
+            fontWeight: "400",
+            textAlign: "center",
+            fontSize: 16,
+          }}
+        >
+          More Events
+        </Text>
+      </TouchableOpacity>
+
     </SafeAreaView>
   );
 };
@@ -123,15 +134,15 @@ const styles = StyleSheet.create({
     shadowRadius: 5,
   },
   footer_component: {
-    backgroundColor: "#5A5B68",
-    borderRadius: 10,
-    padding: 10,
-    marginHorizontal: 20,
-    marginTop: 90,
-    height: 54,
+    backgroundColor: "#7d7d7d",
+    marginTop: 10,
+    borderRadius: 20,
+    padding: 5,
+    height: 40,
     width: 138,
     flex: 1,
-    alignItems: "center",
+    alignSelf: "center",
+    textAlign: "center",
     justifyContent: "center",
   },
 });
