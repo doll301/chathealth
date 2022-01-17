@@ -27,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
     {
       id: 0,
-      name: "Ellen",
+      name: "Testudo",
     },
   ];
 

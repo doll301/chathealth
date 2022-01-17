@@ -17,7 +17,8 @@ import { DrawerContent } from "./components/drawercontent";
 import OnboardingScreen from "./screens/OnboardingScreen.js"
 
 import EventScreen from "./screens/EventScreen.js";
-import BotScreen from "./screens/BotScreen.js";
+import BotScreen from "./screens/BotScreen2.js";
+
 import HomeScreen from "./screens/HomeScreen.js";
 import NewEventScreen from "./screens/NewEventScreen.js";
 import EmergencyScreen from "./screens/EmergencyScreen.js";
@@ -25,6 +26,7 @@ import EmergencyScreen from "./screens/EmergencyScreen.js";
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
+
 
 /* import firebase from "@react-native-firebase/app"; */
 
@@ -48,7 +50,8 @@ function DashboardStack() {
       />
       <Stack.Screen name="Events" component={EventScreen}
       options={{ headerShown: false }}/>
-      <Stack.Screen name="ChatBot" component={BotScreen} />
+      <Stack.Screen name="ChatBot" component={BotScreen}
+      options={{ headerShown: false }}/>
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
       <Stack.Screen name="Emergency"
       options={{ headerShown: false }}
