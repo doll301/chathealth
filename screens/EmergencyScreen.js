@@ -138,23 +138,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#E4F3FB",
   },
   backbuttonwrapper: {
-    marginTop: 15,
+    marginTop: 20,
     marginLeft: 13,
     height: 24,
-    width: 84,
+    width: 80,
     borderRadius: 40,
     backgroundColor: "#7d7d7d",
-    justifyContent: "flex-start",
+    justifyContent: "center",
+    textAlign: "center",
     alignSelf: "flex-start",
     position: "absolute",
   },
   backbutton: {
     color: "white",
-    top: 3,
     fontSize: 14,
     paddingHorizontal: 13,
   },
-
 
   phonebox: {
     width: 50,
