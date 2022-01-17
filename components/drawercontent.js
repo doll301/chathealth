@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   StyleSheet,
   Image,
+  Linking,
   Button,
 } from "react-native";
 import {
@@ -127,43 +128,11 @@ export function DrawerContent(props) {
           </Drawer.Section>
 
 
-          <Drawer.Section style={styles.drawerSection}>
-            <DrawerItem
-              label="RESOURCES"
-              onPress={() => {}}
-              labelStyle={{
-                fontWeight: "bold",
-                color: "#474646",
-                fontSize: "14",
-              }}
-            />
-
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="shield-check-outline" color={"grey"} size={30} />
-              )}
-              label="What is HIPAA?"
-              onPress={() => {}}
-            />
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="clipboard-list-outline" color={"grey"} size={30} />
-              )}
-              label="Insurance Checker"
-              onPress={() => {}}
-            />
-            <DrawerItem
-              icon={({ color, size }) => (
-                <Icon name="medical-bag" color={"grey"} size={30} />
-              )}
-              label="Health Hotlines"
-              onPress={() => {}}
-            />
-          </Drawer.Section>
         </View>
       </DrawerContentScrollView>
       <Drawer.Section style={styles.BottomDrawerSection}>
-        <DrawerItem label="Logout" onPress={() => {}} />
+        <DrawerItem label="Report a Bug" onPress={() => Linking.openURL('mailto:chathealth1@gmail.com')} />
+        <DrawerItem label="Restart Beta" onPress={() => navigation.navigate("PreOnboarding")} />
       </Drawer.Section>
     </View>
   );
