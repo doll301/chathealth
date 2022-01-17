@@ -277,6 +277,118 @@ class ChatBot extends Component {
         this.setState(previousState => ({
           messages: GiftedChat.append(previousState.messages, [reply]),
         }));
+      } else if (quickReply[0].value == "0052") {
+        let reply = {
+          _id: 1,
+          text: "What can I answer for you?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>Do I have COVID-19 symptoms?</Text>,
+                value: '005201',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Which COVID-19 procedures are currently in place?</Text>,
+                value: '005202',
+              },
+
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "005201") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => Linking.openURL(`tel:${+13014054325}`)}>COVID-19 symptoms include, but are not limited to, a temperature of 100.4 degrees or higher, chills, trouble breathing, sore throat, unusual sinus pain, new loss of taste/smell, nausea or vomiting, muscle or body aches, excessive fatigue, and diarrhea.{'\n'}{'\n'}If you believe you have symptoms of COVID-19, please click this message to call the UMD HEAL line.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "005202") {
+        let reply = {
+          _id: 1,
+          text: <Text>Vaccination: COVID-19 vaccinations are required for all students, faculty and staff, and vaccine boosters are required by January 24 or within 14 days of becoming eligible.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+        let reply2 = {
+          _id: 1,
+          text: <Text>Masks: Wearing a mask indoors is required for everyone, regardless of vaccination status. There are additional situations when masks may be required.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply2]),
+        }));
+        let reply3 = {
+          _id: 1,
+          text: <Text>Travel: The university’s travel guidance currently allows essential and non-essential travel within the United States, depending on your vaccination status. Restrictions are still in place for international travel.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply3]),
+        }));
+        let reply4 = {
+          _id: 1,
+          text: <Text>Testing: Students, faculty and staff who are vaccinated do not need to be tested regularly. Community members who are unvaccinated need to be tested twice weekly regardless of exemption status.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply4]),
+        }));
+        let reply5 = {
+          _id: 1,
+          text: <Text>Special Health Conditions: Individuals with a weakened or compromised immune system may need to continue to take precautions to maximally protect themselves.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply5]),
+        }));
+
+
       }else if (quickReply[0].value == "007") {
         let reply = {
           _id: 1,
@@ -674,16 +786,16 @@ const styles = StyleSheet.create({
     marginTop: 30,
     marginLeft: 13,
     height: 24,
-    width: 84,
+    width: 80,
     borderRadius: 40,
     backgroundColor: "#7d7d7d",
-    justifyContent: "flex-start",
+    justifyContent: "center",
+    textAlign: "center",
     alignSelf: "flex-start",
     position: "absolute",
   },
   backbutton: {
     color: "white",
-    top: 3,
     fontSize: 14,
     paddingHorizontal: 13,
   },
