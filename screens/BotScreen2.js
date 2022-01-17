@@ -96,7 +96,7 @@ class ChatBot extends Component {
       } else if (quickReply[0].value == "003") {
         let reply = {
           _id: 1,
-          text: <Text onPress={() => Linking.openURL(`tel:${+16316817075}`)}>Please click this message to call the UMD HEAL line to speak with a University Health Center representative for instructions on how to proceed.</Text>,
+          text: <Text onPress={() => Linking.openURL(`tel:${+13014054325}`)}>Please click this message to call the UMD HEAL line to speak with a University Health Center representative for instructions on how to proceed.</Text>,
           createdAt: new Date(),
           user: {
             _id: 2,
@@ -157,7 +157,127 @@ class ChatBot extends Component {
           messages: GiftedChat.append(previousState.messages, [reply]),
         }));
 
-      } else if (quickReply[0].value == "007") {
+      } else if (quickReply[0].value == "005") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => Linking.openURL(`tel:${+13014054325}`)}>If you are experiencing symptoms of COVID-19, please click this message to call the UMD HEAL line to speak with a University Health Center representative for instructions on how to proceed.{'\n'}{'\n'}Would you like to see available campus resources or ask a question about COVID-19?</Text>,
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>See Resources</Text>,
+                value: '0051',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Ask a Question</Text>,
+                value: '0052',
+              },
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      } else if (quickReply[0].value == "0051") {
+        let reply = {
+          _id: 1,
+          text: "Select a resource to learn more.",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>Primary Care</Text>,
+                value: '005101',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>HEAL Line</Text>,
+                value: '005102',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>COVID Dashboard</Text>,
+                value: '005103',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Vaccine Info</Text>,
+                value: '005104',
+              },
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "005101") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/primary-care")}}>The UMD Primary Care department offers regular check-ups, non-emergency health evaluations, and follow-up appointments for chronic conditions. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "005102") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/HEAL")}}>The UMD HEAL Line is available for students or employees who need to report a positive COVID-19 test, have potential symptoms of COVID-19, have been exposed to someone with COVID-19. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "005103") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://umd.edu/covid-19-dashboard")}}>The UMD COVID-19 Dashboard provides information about COVID-19 cases and testing on campus. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "005104") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://umd.edu/4Maryland/health/covid-19-vaccine")}}>The UMD COVID-19 Vaccine Information page shares information about vaccine requirements and exemptions, confirming your vaccination status to UMD, and getting COVID-19 vaccines on campus. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "007") {
         let reply = {
           _id: 1,
           text: "If you are experiencing a psychiatric emergency, call 911 or go to your nearest hospital emergency department. \n\nWould you like to see available campus resources or ask a question about emotional and behavioral health?",
