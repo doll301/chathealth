@@ -27,6 +27,12 @@ class NewEventScreen extends React.Component {
     return (
       <View style={styles.container}>
         {/* Blue swoosh at the top of the page */}
+        <TouchableOpacity
+          style={styles.backbuttonwrapper}
+          onPress={() => this.props.navigation.navigate('Events')}>
+          <Text style={styles.backbutton}>◀︎ Events</Text>
+        </TouchableOpacity>
+
         <Image
           source={require("../assets/blue-wave.png")}
           resizeMode="stretch"
@@ -138,6 +144,25 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginBottom: 20,
   },
+  backbuttonwrapper: {
+    marginTop: 35,
+    marginLeft: 13,
+    height: 24,
+    width: 84,
+    borderRadius: 40,
+    backgroundColor: "#7d7d7d",
+    justifyContent: "flex-start",
+    alignSelf: "flex-start",
+    position: "absolute",
+    zIndex: 2,
+  },
+  backbutton: {
+    color: "white",
+    top: 3,
+    fontSize: 14,
+    paddingHorizontal: 13,
+  },
+
 
   /* Container to be used to keep label and text input in horizontal line */
   fieldContainer: {

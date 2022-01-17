@@ -14,6 +14,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "./components/drawercontent";
 
+import PreOnboardingScreen from "./screens/PreOnboardingScreen.js"
 import OnboardingScreen from "./screens/OnboardingScreen.js"
 
 import EventScreen from "./screens/EventScreen.js";
@@ -26,6 +27,9 @@ import EmergencyScreen from "./screens/EmergencyScreen.js";
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 
 /* import firebase from "@react-native-firebase/app"; */
@@ -40,23 +44,14 @@ function DashboardStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: true,
+        headerShown: false,
       }}
     >
-      <Stack.Screen
-        name="Home"
-        options={{ headerShown: false }}
-        component={HomeScreen}
-      />
-      <Stack.Screen name="Events" component={EventScreen}
-      options={{ headerShown: false }}/>
-      <Stack.Screen name="ChatBot" component={BotScreen}
-      options={{ headerShown: false }}/>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Events" component={EventScreen} />
+      <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
-      <Stack.Screen name="Emergency"
-      options={{ headerShown: false }}
-
-      component={EmergencyScreen} />
+      <Stack.Screen name="Emergency" component={EmergencyScreen} />
 
 
       <Stack.Screen
@@ -92,7 +87,8 @@ export default function App() {
       <Drawer.Navigator
         screenOptions={{ headerShown: false }}
         drawerContent={(props) => <DrawerContent {...props} />}>
-
+          <Drawer.Screen name="PreOnboarding" component={PreOnboardingScreen}
+          options={{ swipeEnabled: false }}/>
           <Drawer.Screen name="Onboarding" component={OnboardingScreen}
           options={{ swipeEnabled: false }}/>
           <Drawer.Screen name="Dashboard" component={DashboardStack} />
