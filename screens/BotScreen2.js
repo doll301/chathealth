@@ -726,7 +726,621 @@ class ChatBot extends Component {
             messages: GiftedChat.append(previousState.messages, [reply]),
           }));
 
+        }else if (quickReply[0].value == "008") {
+          let reply = {
+            _id: 1,
+            text: "Would you like to see available campus resources or ask a question about financial wellness?",
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+            quickReplies: {
+              type: 'radio',
+              keepIt: true,
+              values: [
+                {
+                  title: <Text style={{fontWeight: "bold"}}>See Resources</Text>,
+                  value: '0081',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>Ask a Question</Text>,
+                  value: '0082',
+                },
+              ],
+            }
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+        }else if (quickReply[0].value == "0081") {
+          let reply = {
+            _id: 1,
+            text: "Select a financial wellness resource to learn more.",
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+            quickReplies: {
+              type: 'radio',
+              keepIt: true,
+              values: [
+                {
+                  title: <Text style={{fontWeight: "bold"}}>Financial Aid</Text>,
+                  value: '008101',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>Money Matters</Text>,
+                  value: '008102',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>Student Crisis Fund</Text>,
+                  value: '008103',
+                },
+              ],
+            }
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+        }else if (quickReply[0].value == "008101") {
+          let reply = {
+            _id: 1,
+            text: <Text onPress={() => WebBrowser.openBrowserAsync("https://financialaid.umd.edu/")}>The UMD Financial Aid Office provides information to UMD students about financial aid and billing. Click this message to learn more.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+        }else if (quickReply[0].value == "008102") {
+          let reply = {
+            _id: 1,
+            text: <Text onPress={() => WebBrowser.openBrowserAsync("https://financialaid.umd.edu/resources-policies/money-matters")}>The Money Matters program provides UMD students with financial literacy resources, including information about saving for college, financial concepts, and credit cards. Click this message to learn more.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+        }else if (quickReply[0].value == "008103") {
+          let reply = {
+            _id: 1,
+            text: <Text onPress={() => WebBrowser.openBrowserAsync("http://sagiving.umd.edu/crisis/index.html")}>UMD Student Crisis Fund provides immediate assistance to any student who faces an unanticipated emergency financial need. Click this message to learn more.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+        } else if (quickReply[0].value == "0082") {
+          let reply = {
+            _id: 1,
+            text: "What can I answer for you?",
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+            quickReplies: {
+              type: 'radio',
+              keepIt: true,
+              values: [
+                {
+                  title: <Text style={{fontWeight: "bold"}}>What is financial aid and what is it used for?</Text>,
+                  value: '008201',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>What types of financial aid are available to me?</Text>,
+                  value: '008202',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>How do I get financial aid?</Text>,
+                  value: '008203',
+                },
+                {
+                  title: <Text style={{fontWeight: "bold"}}>Where can I learn more about financial literacy resources at UMD?</Text>,
+                  value: '008204',
+                },
+
+              ],
+            }
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+        }else if (quickReply[0].value == "008201") {
+            let reply = {
+              _id: 1,
+              text: <Text>Financial aid covers costs of education including tuition and university fees, room and meal plans, books and supplies, personal expenses and transportation costs. Some financial aid will need to be paid back and some does not need to be paid back. Loans, scholarships, grants and work-study are all types of financial aid. Financial aid can come from the university, the state government, the federal government or private sources.</Text>,
+              createdAt: new Date(),
+              user: {
+                _id: 2,
+                name: 'FAQ Bot',
+                avatar: require("../assets/robot.png"),
+              },
+            }
+            this.setState(previousState => ({
+              messages: GiftedChat.append(previousState.messages, [reply]),
+            }));
+
+          }else if (quickReply[0].value == "008202") {
+              let reply = {
+                _id: 1,
+                text: <Text onPress={() => WebBrowser.openBrowserAsync("https://financialaid.umd.edu/types-aid")}>There are a few different types of financial aid you may be eligible to receive, such as grants and scholarships, federal work-study, student loans, and graduate assistantships and fellowships. You can click on this message to read more.</Text>,
+                createdAt: new Date(),
+                user: {
+                  _id: 2,
+                  name: 'FAQ Bot',
+                  avatar: require("../assets/robot.png"),
+                },
+              }
+              this.setState(previousState => ({
+                messages: GiftedChat.append(previousState.messages, [reply]),
+              }));
+
+          } else if (quickReply[0].value == "008203") {
+              let reply = {
+                _id: 1,
+                text: <Text>You must submit the Free Application for Federal Student Aid (FAFSA) each year to receive financial aid from the University of Maryland. By completing the FAFSA, you will be automatically considered for federal and university aid such as scholarships, grants, loans and work-study. Private scholarships, grants, and loans will have their own processes but some may also require you to submit the FAFSA.</Text>,
+                createdAt: new Date(),
+                user: {
+                  _id: 2,
+                  name: 'FAQ Bot',
+                  avatar: require("../assets/robot.png"),
+                },
+              }
+              this.setState(previousState => ({
+                messages: GiftedChat.append(previousState.messages, [reply]),
+              }));
+
+          } else if (quickReply[0].value == "008204") {
+              let reply = {
+                _id: 1,
+                text: <Text onPress={() => WebBrowser.openBrowserAsync("https://financialaid.umd.edu/resources-policies/money-matters")}>The UMD Money Matters program provides students with financial literacy resources, including information about saving for college, financial concepts, and credit cards. You can click on this message to read more.</Text>,
+                createdAt: new Date(),
+                user: {
+                  _id: 2,
+                  name: 'FAQ Bot',
+                  avatar: require("../assets/robot.png"),
+                },
+              }
+              this.setState(previousState => ({
+                messages: GiftedChat.append(previousState.messages, [reply]),
+              }));
+
+      }else if (quickReply[0].value == "010") {
+        let reply = {
+          _id: 1,
+          text: "Would you like to see available campus resources or ask a question about sexual health?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>See Resources</Text>,
+                value: '0101',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Ask a Question</Text>,
+                value: '0102',
+              },
+            ],
+          }
         }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "0101") {
+        let reply = {
+          _id: 1,
+          text: "Select a sexual health resource to learn more.",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>General Sexual Health</Text>,
+                value: '010101',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Self-STI Test</Text>,
+                value: '010102',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Women's Health Clinic</Text>,
+                value: '010103',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Men's Health Clinic</Text>,
+                value: '010104',
+              },
+
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "010101") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health")}>The Sexual Health program encourages sexual health and wellness by providing sexual health supplies (i.e. condoms, lube, safer sex kits, abstinence kits), peer education programs, free emergency contraception, as well as individual sexual health consultations about birth control, STI testing, and more. Click on this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "010102") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => WebBrowser.openBrowserAsync("https://myuhc.umd.edu")}>You can order a self-STI test from the UHC if you do not have symptoms. A two-week HIV test is provided for free, and you may request a rapid (next-day result) HIV test for $25 and Gonorrhea and Chlamydia tests for $28/site. You pay out of pocket and can access the STI Self-Test Clinic here. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "010103") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/womens-health")}>Women's Health Services are staffed by physicians, nurse practitioners and physician assistants and specializes in care for people with a uterus, vagina, or breasts, regardless of gender identity. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "010104") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/mens-health")}>Men's Health Services are staffed by physicians, nurse practitioners and physician assistants and specializes in care for people with a penis, testes, or a prostate regardless of gender identity. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "0102") {
+        let reply = {
+          _id: 1,
+          text: "What can I answer for you?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>When should I get an STI test?</Text>,
+                value: '010201',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What type of STI test should I receive?</Text>,
+                value: '010202',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>How long after exposure should I get an STI test?</Text>,
+                value: '010203',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>How mcuh does an STI test cost?</Text>,
+                value: '010204',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Who can I contact for help selecting an STI test?</Text>,
+                value: '010205',
+              },
+
+
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "010201") {
+          let reply = {
+            _id: 1,
+            text: <Text>The Centers for Disease Control and Prevention (CDC) recommend that sexually active individuals be STI screened at least once a year or in between new partners. Depending on risk, more frequent screening may be recommended. An open and honest dialogue with your healthcare provider will help to determine your risk, needs, and appropriate tests.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "010202") {
+          let reply = {
+            _id: 1,
+            text: <Text>You should be routinely tested for HIV, Chlamydia, and Gonorrhea. Some STIs, like Chlamydia and Gonorrhea, are site specific. Depending on your behavior, throat and/or rectal swabs may be recommended for the most accurate testing. The CDC does not recommend herpes screening for people without symptoms. Recommended HPV screening begins for women at age 21 through a gynecological exam and pap testing. There is no recommended HPV screening tool for men without symptoms.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "010203") {
+          let reply = {
+            _id: 1,
+            text: <Text>Wait ten days to two weeks after a potential STI exposure to get tested for the most accurate results. If a recent partner has tested positive for an STI, please contact a health care provider directly for instruction on the appropriate follow-up protocol.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "010204") {
+          let reply = {
+            _id: 1,
+            text: <Text>Self-STI testing is billed out-of-pocket (to you directly, not your insurance). An HIV test with a two-week wait for results is free. Rapid HIV tests are $25, and Gonorrhea and Chlamydia tests cost $28 per site.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "010205") {
+          let reply = {
+            _id: 1,
+            text: <Text>If you’re not sure which test is right for you, you can email Jenna B. Messman at jbeckwit@umd.edu for assistance in selecting the best service.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011") {
+        let reply = {
+          _id: 1,
+          text: "Would you like to see available campus resources or ask a question about the pharmacy?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>See Resources</Text>,
+                value: '0111',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Ask a Question</Text>,
+                value: '0112',
+              },
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "0111") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/pharmacy ")}>UMD Pharmacy – The UMD Pharmacy provides pharmacy services for students, faculty, staff and their immediate family members. The Pharmacy also provides medication consultations upon request. Click on this message to learn more.</Text>,
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "0112") {
+        let reply = {
+          _id: 1,
+          text: "What can I answer for you?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/robot.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>Where is the UMD pharmacy located?</Text>,
+                value: '011201',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What are the pharmacy’s hours of operation?</Text>,
+                value: '011202',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>How can I fill my prescription at the pharmacy?</Text>,
+                value: '011203',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>How can I refill my prescription at the pharmacy?</Text>,
+                value: '011204',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Which prescription insurance does the UMD pharmacy accept?</Text>,
+                value: '011205',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What payment methods does the UMD pharmacy accept?</Text>,
+                value: '011206',
+              },
+
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "011201") {
+          let reply = {
+            _id: 1,
+            text: <Text>The UMD Pharmacy is in the main lobby of the University Health Center, which is located at 140 Campus Dr, College Park, MD 20740.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011202") {
+          let reply = {
+            _id: 1,
+            text: <Text>The UMD pharmacy is open Monday through Friday from 9 AM to 5 PM.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011203") {
+          let reply = {
+            _id: 1,
+            text: <Text>The pharmacy fills prescriptions from any (on- or off-campus) physician, dentist, or other medical provider. They accept prescriptions over the telephone and via fax directly from your provider's office, when legally permissible. At your request, the pharmacy can also call your provider's office for refills or new prescriptions and it can call other pharmacies to transfer your prescription(s) to our pharmacy.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011204") {
+          let reply = {
+            _id: 1,
+            text: <Text>There are two ways to refill your prescriptions. The first is to send the pharmacist a secure message through the patient portal (https://myuhc.umd.edu/). You can do this by clicking 'Messages,' 'New Message,' then 'Request a Prescription Refill' and completing the online form. Please allow 1-2 business days for your refill request to be completed. You may also contact the pharmacy by calling (301) 314-8167.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011205") {
+          let reply = {
+            _id: 1,
+            text: <Text>The pharmacy accepts many major prescription insurance plans including, but not limited to: SHIP (Student Health Insurance Plan), Caremark, Blue Cross Blue Shield, OptumRx, Aetna, Medco, Express Scripts, Maryland Medicaid, and Magellan.</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }else if (quickReply[0].value == "011206") {
+          let reply = {
+            _id: 1,
+            text: <Text>The pharmacy accepts cash, check, Terrapin Express, student account, flexible spending account card, and credit/debit (Visa, Discover, American Express, and Mastercard).</Text>,
+            createdAt: new Date(),
+            user: {
+              _id: 2,
+              name: 'FAQ Bot',
+              avatar: require("../assets/robot.png"),
+            },
+          }
+          this.setState(previousState => ({
+            messages: GiftedChat.append(previousState.messages, [reply]),
+          }));
+
+      }
 
 
 
@@ -779,7 +1393,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   backbuttonwrapper: {
-    marginTop: 35,
+    marginTop: 45,
     marginLeft: 13,
     height: 24,
     width: 80,
