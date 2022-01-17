@@ -87,7 +87,7 @@ const onPressTouch = () => {
                 style={{
                   color: "#fff",
                   fontWeight: "bold",
-                  fontSize: 14,
+                  fontSize: 12,
                   textDecorationLine: "underline",
                 }}
 
@@ -272,9 +272,10 @@ const styles = StyleSheet.create({
     marginTop: 15,
     backgroundColor: "#FF7373",
     width: "100%",
-    height: 30,
-    padding: 5,
+    height: 25,
+    padding: 3,
     alignItems: "center",
+    justifyContent: "center",
   },
   health_bubble: {
     backgroundColor: "#fff",
