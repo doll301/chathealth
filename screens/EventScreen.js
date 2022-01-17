@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image,
   SafeAreaView,
+  Dimensions,
   FlatList,
 } from "react-native";
 
@@ -19,6 +20,7 @@ const EventScreen = ({ navigation }) => {
   }
   const EVENT_DATA = [
     {
+
       id: 0,
       title: "Biking for Beginners",
       location: "UMD RecWell",
@@ -85,6 +87,12 @@ const EventScreen = ({ navigation }) => {
        renderItem are passed in, and this function will use those props to render
        the image and text to be found in the repeated event card. */
   }
+
+
+  const BlankBox = () => (
+    <View style={{height: 300,}}></View>
+  );
+
   const Item = ({ title, location, address, date, img, virtual }) => (
     <View>
       <TouchableOpacity style={[styles.card, styles.shadowProp]}>
@@ -132,26 +140,36 @@ const EventScreen = ({ navigation }) => {
         style={{ width: "100%" }}
       />
 
-      <View style={{ top: -50 }}>
-        <Text style={{ fontSize: 20 }}>EVENTS</Text>
+      <View style={{ top: -100,}}>
+        <Text style={{ fontSize: 15, color: "#3F7B9D"}}>EVENTS FEED</Text>
       </View>
 
       {/* List of events to be rendered */}
+
+
+      <View style={{zIndex: -1,}}>
       <FlatList
         data={EVENT_DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
+        style={{top: -80, zIndex: -1, paddingTop: 60, top: -100, backgroundColor: "white",}}
+        showsVerticalScrollIndicator={false}
+        ListFooterComponent={BlankBox}
       />
-
+      <Text style={{zIndex: 2, fontSize: 18, bottom: 220, alignSelf: "center"}}>Planning a health event on campus?</Text>
       <TouchableOpacity
         style={styles.add_button}
         onPress={() => navigation.navigate("NewEvent")}
       >
         <Text style={styles.add_text}>Add an Event</Text>
       </TouchableOpacity>
+      <Image source={require("../assets/eventbuttonbackground.png")} resizeMode={"stretch"} style={{position: "absolute", bottom: 80, left: -100, width: 1000}}/>
+      </View>
     </SafeAreaView>
   );
 };
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -196,16 +214,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   add_button: {
+    position: "absolute",
+    bottom: 150,
     justifyContent: "center",
+    alignSelf: "center",
     alignItems: "center",
     backgroundColor: "#7d7d7d",
     borderWidth: 2,
     borderStyle: "solid",
     borderColor: "#7d7d7d",
-    borderRadius: 5,
+    borderRadius: 15,
     width: 200,
+    zIndex: 2,
     height: 50,
-    margin: 15,
   },
   add_text: {
     justifyContent: "center",
