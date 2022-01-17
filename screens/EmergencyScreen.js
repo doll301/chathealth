@@ -6,6 +6,7 @@ import {
   Image,
   ImageBackground,
   ScrollView,
+  Linking,
   SafeAreaView,
 } from "react-native";
 import {Avatar, Text} from "react-native-paper";
@@ -41,9 +42,9 @@ const EmergencyScreen = ({ navigation }) => {
           </Text>
 
           <View style={styles.rowwhite}>
-            <View style={styles.phonebox}>
+            <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+911}`)}>
             <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+            </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
             General Emergency
@@ -55,9 +56,9 @@ const EmergencyScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.rowblue}>
-            <View style={styles.phonebox}>
+            <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+13014053333}`)}>
             <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+            </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
             UMPD Emergency Line
@@ -69,9 +70,9 @@ const EmergencyScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.rowwhite}>
-            <View style={styles.phonebox}>
-            <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+13014054325}`)}>
+          <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
+          </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
             COVID Hotline
@@ -83,9 +84,9 @@ const EmergencyScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.rowblue}>
-            <View style={styles.phonebox}>
-            <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+18002738255}`)}>
+          <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
+          </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
             Suicide Hotline
@@ -98,12 +99,12 @@ const EmergencyScreen = ({ navigation }) => {
 
 
           <View style={styles.rowwhite}>
-            <View style={styles.phonebox}>
-            <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+18779247758}`)}>
+          <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
+          </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
-            Nurse line
+            After Hours Nurse line
             </Text>
             <Text style={styles.entrysubtitle}>
             UMD Campus Nurse Line
@@ -112,15 +113,15 @@ const EmergencyScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.rowblue}>
-            <View style={styles.phonebox}>
-            <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
-            </View>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+13017413442}`)}>
+          <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
+          </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
             CARE Crisis Line
             </Text>
             <Text style={styles.entrysubtitle}>
-            CARE line
+            CARE to Stop Violence
             </Text>
             </View>
           </View>
