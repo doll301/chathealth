@@ -247,9 +247,12 @@ const styles = StyleSheet.create({
   hamburgerwrapper: {
     paddingTop: 30,
     paddingLeft: 23,
+    paddingRight: 20,
+    paddingBottom: 20,
     justifyContent: "flex-start",
     alignSelf: "flex-start",
     position: "absolute",
+
   },
   hamburger: {
     width: 25,
