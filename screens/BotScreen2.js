@@ -15,7 +15,7 @@ class ChatBot extends Component {
     user: {
       _id: 2,
       name: 'FAQ Bot',
-      avatar: require("../assets/robot.png"),
+      avatar: require("../assets/chatbotpfp.png"),
     },
     quickReplies: {
       type: 'radio',
@@ -73,7 +73,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -101,7 +101,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -115,7 +115,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -160,7 +160,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -188,7 +188,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -225,7 +225,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -239,7 +239,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -253,7 +253,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -267,7 +267,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -280,7 +280,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -310,7 +310,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -325,7 +325,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -338,7 +338,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -351,7 +351,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -364,7 +364,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -377,7 +377,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -392,7 +392,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -420,7 +420,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -489,7 +489,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -503,7 +503,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -517,7 +517,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -531,7 +531,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -545,7 +545,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -559,7 +559,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -573,7 +573,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -587,7 +587,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -601,7 +601,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -615,7 +615,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -629,7 +629,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -643,7 +643,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -657,7 +657,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -689,7 +689,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -704,7 +704,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -719,7 +719,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -733,7 +733,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
             quickReplies: {
               type: 'radio',
@@ -761,7 +761,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
             quickReplies: {
               type: 'radio',
@@ -794,7 +794,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -808,7 +808,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -822,7 +822,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -835,7 +835,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
             quickReplies: {
               type: 'radio',
@@ -873,7 +873,7 @@ class ChatBot extends Component {
               user: {
                 _id: 2,
                 name: 'FAQ Bot',
-                avatar: require("../assets/robot.png"),
+                avatar: require("../assets/chatbotpfp.png"),
               },
             }
             this.setState(previousState => ({
@@ -888,7 +888,7 @@ class ChatBot extends Component {
                 user: {
                   _id: 2,
                   name: 'FAQ Bot',
-                  avatar: require("../assets/robot.png"),
+                  avatar: require("../assets/chatbotpfp.png"),
                 },
               }
               this.setState(previousState => ({
@@ -903,7 +903,7 @@ class ChatBot extends Component {
                 user: {
                   _id: 2,
                   name: 'FAQ Bot',
-                  avatar: require("../assets/robot.png"),
+                  avatar: require("../assets/chatbotpfp.png"),
                 },
               }
               this.setState(previousState => ({
@@ -918,7 +918,7 @@ class ChatBot extends Component {
                 user: {
                   _id: 2,
                   name: 'FAQ Bot',
-                  avatar: require("../assets/robot.png"),
+                  avatar: require("../assets/chatbotpfp.png"),
                 },
               }
               this.setState(previousState => ({
@@ -932,7 +932,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -960,7 +960,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -998,7 +998,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -1012,7 +1012,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -1026,7 +1026,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -1040,7 +1040,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -1053,7 +1053,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -1096,7 +1096,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1111,7 +1111,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1126,7 +1126,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1141,7 +1141,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1156,7 +1156,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1170,7 +1170,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -1198,7 +1198,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
         }
         this.setState(previousState => ({
@@ -1212,7 +1212,7 @@ class ChatBot extends Component {
           user: {
             _id: 2,
             name: 'FAQ Bot',
-            avatar: require("../assets/robot.png"),
+            avatar: require("../assets/chatbotpfp.png"),
           },
           quickReplies: {
             type: 'radio',
@@ -1258,7 +1258,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1273,7 +1273,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1288,7 +1288,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1303,7 +1303,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1318,7 +1318,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
@@ -1333,7 +1333,7 @@ class ChatBot extends Component {
             user: {
               _id: 2,
               name: 'FAQ Bot',
-              avatar: require("../assets/robot.png"),
+              avatar: require("../assets/chatbotpfp.png"),
             },
           }
           this.setState(previousState => ({
