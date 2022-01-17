@@ -138,10 +138,6 @@ class ChatBot extends Component {
                 value: '008',
               },
               {
-                title: <Text style={{fontWeight: "bold"}}>Social Wellness</Text>,
-                value: '009',
-              },
-              {
                 title: <Text style={{fontWeight: "bold"}}>Sexual Health</Text>,
                 value: '010',
               },
