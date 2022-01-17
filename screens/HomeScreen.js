@@ -67,6 +67,10 @@ const onPressTouch = () => {
             />
           </TouchableOpacity>
 
+          <TouchableOpacity style={styles.chatbutton} onPress={() => navigation.navigate("ChatBot")}>
+          <Image source={require("../assets/betabutton.png")} resizeMode="stretch" style={{bottom: -5, height: 40, width: 65,}} />
+          </TouchableOpacity>
+
           {/* Welome message that uses the name of the user */}
           <Text style={styles.welcome_message}>
             Welcome back,{" "}
@@ -221,20 +225,24 @@ const styles = StyleSheet.create({
     width: 145,
     justifyContent: "flex-end",
   },
-  bottom_bar: {
+  chatbutton: {
+    height: 50,
+    borderRadius: 30,
+    borderTopRightRadius: 0,
+    top: 15,
+    right: 15,
+    shadowColor: "#171717",
+    shadowOffset: { width: 2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 5,
+    flexDirection: "row",
+    justifyContent: "center",
+
     position: "absolute",
-    height: "9.5%",
-    width: "40%",
+    width: 90,
+    backgroundColor: "white",
     alignSelf: "flex-end",
-    justifyContent: "flex-end",
-    bottom: 150,
-  },
-  bot_button: {
-    borderRadius: 20,
-    padding: 15,
-    justifyContent: "flex-end",
-    alignSelf: "flex-end",
-    position: "absolute",
+    zIndex: 3,
   },
   hamburgerwrapper: {
     paddingTop: 30,
