@@ -783,7 +783,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
   },
   backbuttonwrapper: {
-    marginTop: 30,
+    marginTop: 35,
     marginLeft: 13,
     height: 24,
     width: 80,
@@ -793,6 +793,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     alignSelf: "flex-start",
     position: "absolute",
+    zIndex: 10,
   },
   backbutton: {
     color: "white",
