@@ -8,18 +8,24 @@ import {
   Image,
 } from "react-native";
 
-const ProfessionalList = () => {
+const ImportantList = () => {
   const DATA = [
     {
       id: "10",
-      title: "Behavioral Health Center",
-      img: require("../../assets/generalhealthtips/anxiety-bhc.png"),
+      title: "Sleep is crucial to our well-being.",
+      img: require("../../assets/generalhealthtips/sleep-bed.png"),
     },
     {
       id: "11",
-      title: "Medication Management",
-      img: require("../../assets/generalhealthtips/anxiety-medication.png"),
+      title: "Sleep reduces stress.",
+      img: require("../../assets/generalhealthtips/sleep-storm.png"),
     },
+    {
+      id: "12",
+      title: "Sleep regulates your moods.",
+      img: require("../../assets/generalhealthtips/sleep-mood.png"),
+    },
+
 
   ];
 
@@ -27,7 +33,7 @@ const ProfessionalList = () => {
     <TouchableOpacity style={[styles.container, styles.shadowProp]}>
       <Image
         source={img}
-        style={{ resizeMode: "contain", height: 70, width: 70 }}
+        style={{ resizeMode: "contain", height: 60, width: 60}}
       />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
@@ -78,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProfessionalList;
+export default ImportantList;

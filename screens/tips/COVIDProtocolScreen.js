@@ -13,7 +13,7 @@ import {
 import ImportantList from "../../components/Sleep/ImportantList.js";
 import ImproveList from "../../components/Sleep/ImproveList.js";
 
-const SleepScreen = ({ navigation }) => {
+const COVIDProtocolScreen = ({ navigation }) => {
 
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
@@ -59,19 +59,20 @@ const SleepScreen = ({ navigation }) => {
           <Text
             style={{ left: 20, top: 20, color: "#000000", fontSize: 21, marginTop: 20, fontWeight: "600",}}
           >
-            SLEEP
+            COVID-19 Protocol
           </Text>
           <Text
             style={{ left: 20, top: 30, marginBottom: 15, color: "#000000", fontSize: 15, fontWeight: "300", fontStyle: "italic",}}
           >
-            Sleep is critical to our mental-health, well-being, and every day functionality. The UHC provides several resources on how we can all work to improve our sleep habits along with professional resources to guide our wellness journey.        </Text>
-        </View>
+            It is imperative that all UMD faculty members follow COVID-19 protocol to protect ourselves and each other from infection and serious illness. Following are current guidelines from the UMD University Health Center to stay safe.
+            </Text>
+          </View>
 
 
         <Text
           style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
         >
-          Why is sleep imoprtant?
+          Which COVID-19 safety measures {'\n'}are in place on campus?
         </Text>
 
         <View style={{ marginTop: 20 }}>
@@ -83,7 +84,7 @@ const SleepScreen = ({ navigation }) => {
         <Text
           style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
         >
-          How can I improve my sleep?
+          Where can I get tested for COVID-19?
         </Text>
 
         <View style={{ marginVertical: 20 }}>
@@ -139,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SleepScreen;
+export default COVIDProtocolScreen;

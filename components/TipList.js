@@ -25,18 +25,8 @@ const TipList = () => {
     },
     {
       id: "02",
-      title: "Cold, Flu, Sore Throat",
-      link: "HealthTips",
-    },
-    {
-      id: "03",
-      title: "Vaccination",
-      link: "HealthTips",
-    },
-    {
-      id: "04",
-      title: "Sexual Health",
-      link: "HealthTips",
+      title: "COVID-19 Protocol",
+      link: "COVIDProtocol",
     },
   ];
 
@@ -58,6 +48,8 @@ const TipList = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         horizontal={true}
+        showsHorizontalScrollIndicator={false}
+
       />
     </SafeAreaView>
   );

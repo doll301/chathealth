@@ -27,6 +27,8 @@ import EmergencyScreen from "./screens/EmergencyScreen.js";
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
 import SleepScreen from "./screens/tips/SleepScreen.js";
+import COVIDProtocolScreen from "./screens/tips/COVIDProtocolScreen.js";
+
 
 
 
@@ -60,6 +62,8 @@ function DashboardStack() {
 
       <Stack.Screen name="Stress" component={StressScreen}/>
       <Stack.Screen name="Sleep" component={SleepScreen}/>
+      <Stack.Screen name="COVIDProtocol" component={COVIDProtocolScreen}/>
+
 
     </Stack.Navigator>
   );

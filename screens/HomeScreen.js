@@ -107,7 +107,7 @@ const onPressTouch = () => {
           <Text
             style={{ left: 20, color: "#444444", fontSize: 15, marginTop: 20 }}
           >
-            General Health Tips
+            This Month's Health Tips
           </Text>
           {/* Our custom FlatList component for displaying tips */}
           <TipList />

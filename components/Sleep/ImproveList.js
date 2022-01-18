@@ -8,18 +8,24 @@ import {
   Image,
 } from "react-native";
 
-const HomeList = () => {
+const ImproveList = () => {
   const DATA = [
     {
       id: "10",
-      title: "Health Promotion & Wellness Services",
-      img: require("../../assets/generalhealthtips/anxiety-health.png"),
+      title: "Meditation",
+      img: require("../../assets/generalhealthtips/sleep-lotus.png"),
     },
     {
       id: "11",
-      title: "Meditation",
-      img: require("../../assets/generalhealthtips/anxiety-meditation.png"),
+      title: "Light Therapy",
+      img: require("../../assets/generalhealthtips/sleep-lightbulb.png"),
     },
+    {
+      id: "11",
+      title: "Wellness Coaching",
+      img: require("../../assets/generalhealthtips/sleep-hand.png"),
+    },
+
 
   ];
 
@@ -27,7 +33,7 @@ const HomeList = () => {
     <TouchableOpacity style={[styles.container, styles.shadowProp]}>
       <Image
         source={img}
-        style={{ resizeMode: "contain", height: 60, width: 60}}
+        style={{ resizeMode: "contain", height: 70, width: 70 }}
       />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
@@ -78,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeList;
+export default ImproveList;
