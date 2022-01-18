@@ -13,7 +13,7 @@ class ChatBot extends Component {
     messages: [
     {
     _id: 1,
-    text: "Welcome to Chat Health. Are you experiencing a medical emergency? Select 'Yes' to open the emergency dashboard.",
+    text: "Welcome to Chat Health! Are you experiencing a medical emergency? Select 'Yes' to open the emergency dashboard.",
     createdAt: new Date(),
     user: {
       _id: 2,
