@@ -2,8 +2,11 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, Linking, TouchableOpacity } from "react-native";
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
 
+
 import * as WebBrowser from 'expo-web-browser';
 import { NavigationContainer } from '@react-navigation/native';
+import { TypingAnimation } from "react-native-typing-animation";
+
 
 class ChatBot extends Component {
   state ={
@@ -48,6 +51,7 @@ class ChatBot extends Component {
  //  }
 
   onQuickReply(quickReply) {
+
       let message = quickReply[0].title;
       let msg = {
         _id: 1,
@@ -57,6 +61,7 @@ class ChatBot extends Component {
           _id:1,
         }
       }
+
 
 
       this.setState(previousState => ({
@@ -462,6 +467,11 @@ class ChatBot extends Component {
                 title: <Text style={{fontWeight: "bold"}}>Recreation and Wellness (RecWell)</Text>,
                 value: '006108',
               },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Sports Medicine</Text>,
+                value: '006109',
+              },
+
 
             ],
           }
@@ -582,6 +592,117 @@ class ChatBot extends Component {
         this.setState(previousState => ({
           messages: GiftedChat.append(previousState.messages, [reply]),
         }));
+      }else if (quickReply[0].value == "006108") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://umterps.com/sports/2018/3/12/sports-medicine-services.aspx")}}>Sports Medicine Services provides comprehensive care for students participating in intercollegiate athletics. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "0062") {
+        let reply = {
+          _id: 1,
+          text: <Text>What can I answer for you?</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold",}}>What do I need to bring to my primary care or walk-in clinic visits?</Text>,
+                value: '006201',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Where is the UMD University Health Center located?</Text>,
+                value: '006202',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What services does Primary Care Services provide?</Text>,
+                value: '006203',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What should I do if I, my friend, or a peer is having a physical health emergency?</Text>,
+                value: '006204',
+              },
+
+            ],
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006201") {
+        let reply = {
+          _id: 1,
+          text: <Text>Please bring your University ID, health insurance card and a method of payment to your visit. If you are able, please also bring all of your medications and medical records to your visit.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006202") {
+        let reply = {
+          _id: 1,
+          text: <Text>The UMD University Health Center is located at 140 Campus Dr, College Park, MD 20740.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006203") {
+        let reply = {
+          _id: 1,
+          text: <Text>Primary Care Services are able to help with non-emergency conditions, such as colds and flu‐like illnesses, rashes and other skin disorders, headaches and dizziness, ear infections, sore throat/strep throat/mononucleosis, asthma and seasonal allergies, and screening/testing/treatment for sexually transmitted diseases.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006204") {
+        let reply = {
+          _id: 1,
+          text: <Text>You may access UMD Walk-In Services for emergency services, such as an asthma attack or trouble breathing, chest pain, allergic reaction, dehydration, high fever, urinary tract infection, or bone or joint injuries. If Walk-In Services is closed, please call 911.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
       }else if (quickReply[0].value == "007") {
         let reply = {
           _id: 1,
@@ -1557,10 +1678,13 @@ class ChatBot extends Component {
           style={styles.backbuttonwrapper}
           onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.backbutton}>◀︎ Home</Text>
+
         </TouchableOpacity>
+
         <Text style={styles.general_health_tips}>
           Beta Bot
         </Text>
+
 
         <GiftedChat
           messages={this.state.messages}
