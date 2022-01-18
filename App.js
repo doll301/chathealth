@@ -14,8 +14,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "./components/drawercontent";
 
-import PreOnboardingScreen from "./screens/PreOnboardingScreen.js"
-import OnboardingScreen from "./screens/OnboardingScreen.js"
+import PreOnboardingScreen from "./screens/PreOnboardingScreen.js";
+import OnboardingScreen from "./screens/OnboardingScreen.js";
 
 import EventScreen from "./screens/EventScreen.js";
 import BotScreen from "./screens/BotScreen2.js";
@@ -27,12 +27,12 @@ import EmergencyScreen from "./screens/EmergencyScreen.js";
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
 import ProfileScreen from "./screens/ProfileScreen.js";
-import { LogBox } from 'react-native';
-LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
-LogBox.ignoreAllLogs();//Ignore all log notifications
+import { LogBox } from "react-native";
+LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
+LogBox.ignoreAllLogs(); //Ignore all log notifications
 
-
-/* import firebase from "@react-native-firebase/app"; */
+// Individual Topic screens
+import MentalScreen from "./screens/topics/MentalHealth";
 
 {
   /* Initializes component we can use to enable navigation between multiple screens. */
@@ -53,11 +53,26 @@ function DashboardStack() {
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
       <Stack.Screen name="Emergency" component={EmergencyScreen} />
 
-
       <Stack.Screen
         name="Stress"
         options={{ headerShown: false }}
         component={StressScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
+function TopicStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen
+        name="Mental"
+        component={MentalScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
@@ -79,21 +94,27 @@ function ProfileStack() {
   );
 }
 
-
 // This is the entry point of our app!!
 export default function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator
         screenOptions={{ headerShown: false }}
-        drawerContent={(props) => <DrawerContent {...props} />}>
-          <Drawer.Screen name="PreOnboarding" component={PreOnboardingScreen}
-          options={{ swipeEnabled: false }}/>
-          <Drawer.Screen name="Onboarding" component={OnboardingScreen}
-          options={{ swipeEnabled: false }}/>
-          <Drawer.Screen name="Dashboard" component={DashboardStack} />
-          <Drawer.Screen name="Profile" component={ProfileStack} />
-
+        drawerContent={(props) => <DrawerContent {...props} />}
+      >
+        <Drawer.Screen
+          name="PreOnboarding"
+          component={PreOnboardingScreen}
+          options={{ swipeEnabled: false }}
+        />
+        <Drawer.Screen
+          name="Onboarding"
+          component={OnboardingScreen}
+          options={{ swipeEnabled: false }}
+        />
+        <Drawer.Screen name="Dashboard" component={DashboardStack} />
+        <Drawer.Screen name="Profile" component={ProfileStack} />
+        <Drawer.Screen name="Topic" component={TopicStack} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

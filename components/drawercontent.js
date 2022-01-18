@@ -22,8 +22,6 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 import { useNavigation } from "@react-navigation/native";
 
-
-
 export function DrawerContent(props) {
   const navigation = useNavigation();
 
@@ -33,19 +31,28 @@ export function DrawerContent(props) {
         <View styles={styles.DrawerContent}>
           <View style={styles.userInfoSection}>
             <View style={{ flexDirection: "row", marginTop: 20 }}>
-
-              <TouchableOpacity onPress={() => navigation.navigate('Profile', { screen: 'Profile' })}>
-              <Avatar.Image
-                source={require("../assets/testudo.png")}
-                size={72}
-              />
+              <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate("Profile", { screen: "Profile" })
+                }
+              >
+                <Avatar.Image
+                  source={require("../assets/testudo.png")}
+                  size={72}
+                />
               </TouchableOpacity>
 
               <View style={{ marginLeft: 13, flexDirection: "column" }}>
                 <Title>Testudo Terrapin</Title>
                 <Caption style={styles.caption}>University of Maryland</Caption>
-                <Caption style={styles.profilebutton}
-                onPress={() => navigation.navigate('Profile', { screen: 'Profile' })}>View Profile</Caption>
+                <Caption
+                  style={styles.profilebutton}
+                  onPress={() =>
+                    navigation.navigate("Profile", { screen: "Profile" })
+                  }
+                >
+                  View Profile
+                </Caption>
               </View>
             </View>
           </View>
@@ -87,7 +94,7 @@ export function DrawerContent(props) {
                 <Icon name="record" color={"#D2EDB0"} size={30} />
               )}
               label="Mental Health"
-              onPress={() => {}}
+              onPress={() => navigation.navigate("Topic", { screen: "Mental" })}
             />
 
             <DrawerItem
@@ -126,13 +133,17 @@ export function DrawerContent(props) {
               onPress={() => {}}
             />
           </Drawer.Section>
-
-
         </View>
       </DrawerContentScrollView>
       <Drawer.Section style={styles.BottomDrawerSection}>
-        <DrawerItem label="Report a Bug" onPress={() => Linking.openURL('mailto:chathealth1@gmail.com')} />
-        <DrawerItem label="Restart Beta" onPress={() => navigation.navigate("PreOnboarding")} />
+        <DrawerItem
+          label="Report a Bug"
+          onPress={() => Linking.openURL("mailto:chathealth1@gmail.com")}
+        />
+        <DrawerItem
+          label="Restart Beta"
+          onPress={() => navigation.navigate("PreOnboarding")}
+        />
       </Drawer.Section>
     </View>
   );
@@ -162,7 +173,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     lineHeight: 22,
   },
-
 
   row: {
     marginTop: 20,

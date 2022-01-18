@@ -1,4 +1,4 @@
-import {React, useRef} from "react";
+import { React, useRef } from "react";
 import {
   StyleSheet,
   TouchableOpacity,
@@ -18,10 +18,9 @@ import EventsNearYou from "./../components/EventsNearYou.js";
 import EducationList from "./../components/EducationList.js";
 import ExploreTopicsList from "./../components/ExploreTopics.js";
 
-import { useScrollToTop } from '@react-navigation/native';
+import { useScrollToTop } from "@react-navigation/native";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-
 
 const HomeScreen = ({ navigation }) => {
   const USER_DATA = [
@@ -31,24 +30,20 @@ const HomeScreen = ({ navigation }) => {
     },
   ];
 
-
-
   const scrollRef = useRef();
 
-const onPressTouch = () => {
-  scrollRef.current?.scrollTo({
-    y: 0,
-    animated: true,
-  });
-}
-
+  const onPressTouch = () => {
+    scrollRef.current?.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  };
 
   return (
     <SafeAreaView style={{ flexDirection: "column" }}>
-        {/* Stuff at the top wrapped in this View:
+      {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
-        <View>
-
+      <View>
         <TouchableOpacity onPress={onPressTouch}>
           {/* Blue swoosh at the top of the page */}
           <Image
@@ -67,8 +62,15 @@ const onPressTouch = () => {
             />
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.chatbutton} onPress={() => navigation.navigate("ChatBot")}>
-          <Image source={require("../assets/betabutton.png")} resizeMode="stretch" style={{bottom: -5, height: 40, width: 65,}} />
+          <TouchableOpacity
+            style={styles.chatbutton}
+            onPress={() => navigation.navigate("ChatBot")}
+          >
+            <Image
+              source={require("../assets/betabutton.png")}
+              resizeMode="stretch"
+              style={{ bottom: -5, height: 40, width: 65 }}
+            />
           </TouchableOpacity>
 
           {/* Welome message that uses the name of the user */}
@@ -76,29 +78,27 @@ const onPressTouch = () => {
             Welcome back,{" "}
             <Text style={{ fontWeight: "bold" }}>{USER_DATA[0].name}.</Text>
           </Text>
-
-          </TouchableOpacity>
-          {/* Everything wrapped in this view is for the emergency banner at the top */}
-          <View>
-            <TouchableOpacity style={styles.red_banner}
+        </TouchableOpacity>
+        {/* Everything wrapped in this view is for the emergency banner at the top */}
+        <View>
+          <TouchableOpacity
+            style={styles.red_banner}
             onPress={() => navigation.navigate("Emergency")}
+          >
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                fontSize: 12,
+                textDecorationLine: "underline",
+              }}
             >
-              <Text
-                style={{
-                  color: "#fff",
-                  fontWeight: "bold",
-                  fontSize: 12,
-                  textDecorationLine: "underline",
-                }}
-
-              >
-                Having an emergency?
-              </Text>
-            </TouchableOpacity>
-          </View>
+              Having an emergency?
+            </Text>
+          </TouchableOpacity>
         </View>
-        <ScrollView ref={scrollRef} style={styles.container}>
-
+      </View>
+      <ScrollView ref={scrollRef} style={styles.container}>
         {/* General Health Tips list (uses custom TipList component) */}
         <View>
           <Text
@@ -128,7 +128,6 @@ const onPressTouch = () => {
 
           <View style={{ backgroundColor: "#E4F3FB", paddingBottom: 20 }}>
             {/* The little ovals above the list (see Figma) */}
-            {/* TO BE DONE: CREATE INDIVIDUAL CLASS */}
             <ScrollView
               style={{ flexDirection: "row", left: 8, marginTop: 10 }}
               horizontal={true}
@@ -193,9 +192,7 @@ const onPressTouch = () => {
         </SafeAreaView>
 
         {/* Button to navigate to the events screen (TO BE UPDATED FOR SURE) */}
-
       </ScrollView>
-
 
       <View style={styles.bottom_bar}>
         {/* Robot button at bottom of screen to navigate to the chat bot */}
@@ -206,8 +203,6 @@ const onPressTouch = () => {
           <Image source={require("../assets/robot.png")} />
         </TouchableOpacity>
       </View>
-
-
     </SafeAreaView>
   );
 };

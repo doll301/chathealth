@@ -34,15 +34,10 @@ const StressScreen = ({ navigation }) => {
             style={styles.backbuttonwrapper}
             onPress={() => navigation.navigate("Home")}
           >
-            <Text
-              style={styles.backbutton}>
-              ◀︎ Home
-              </Text>
+            <Text style={styles.backbutton}>◀︎ Home</Text>
           </TouchableOpacity>
 
-          <Text style={styles.general_health_tips}>
-            General Health Tips
-          </Text>
+          <Text style={styles.general_health_tips}>General Health Tips</Text>
 
           {/* Everything wrapped in this view is for the emergency banner at the top */}
           <View>
@@ -61,45 +56,75 @@ const StressScreen = ({ navigation }) => {
           </View>
         </View>
 
-        <View style={{width: "85%"}}>
+        <View style={{ width: "85%" }}>
           <Text
-            style={{ left: 20, top: 20, color: "#000000", fontSize: 21, marginTop: 20, fontWeight: "600",}}
+            style={{
+              left: 20,
+              top: 20,
+              color: "#000000",
+              fontSize: 21,
+              marginTop: 20,
+              fontWeight: "600",
+            }}
           >
             ANXIETY
           </Text>
           <Text
-            style={{ left: 20, top: 30, marginBottom: 15, color: "#000000", fontSize: 15, fontWeight: "300", fontStyle: "italic",}}
+            style={{
+              left: 20,
+              top: 30,
+              marginBottom: 15,
+              color: "#000000",
+              fontSize: 15,
+              fontWeight: "300",
+              fontStyle: "italic",
+            }}
           >
-            As a college student, it is not uncommon to endure anxiety when it comes to issues with school, finances, or work. The UHC provides professional services for treating anxiety as well as tips on how to regulate your anxiety at home.          </Text>
+            As a college student, it is not uncommon to endure anxiety when it
+            comes to issues with school, finances, or work. The UHC provides
+            professional services for treating anxiety as well as tips on how to
+            regulate your anxiety at home.{" "}
+          </Text>
         </View>
 
-
         <Text
-          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
+          style={{
+            left: 15,
+            top: 20,
+            marginBottom: 10,
+            color: "#000000",
+            fontSize: 17,
+            marginTop: 20,
+            fontWeight: "500",
+          }}
         >
           Where can I go for professional help?
         </Text>
 
         <View style={{ marginTop: 20 }}>
-
-          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
+          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20 }}>
             <ProfessionalList />
           </View>
         </View>
         <Text
-          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
+          style={{
+            left: 15,
+            top: 20,
+            marginBottom: 10,
+            color: "#000000",
+            fontSize: 17,
+            marginTop: 20,
+            fontWeight: "500",
+          }}
         >
           How can I regulate my anxiety at home?
         </Text>
 
         <View style={{ marginVertical: 20 }}>
-
           <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20 }}>
             <HomeList />
           </View>
         </View>
-
-
       </ScrollView>
     </SafeAreaView>
   );
