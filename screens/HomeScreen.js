@@ -44,7 +44,9 @@ const onPressTouch = () => {
 
 
   return (
+
     <SafeAreaView style={{ flexDirection: "column" }}>
+
         {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
@@ -61,6 +63,7 @@ const onPressTouch = () => {
             style={styles.hamburgerwrapper}
             onPress={() => navigation.toggleDrawer()}
           >
+
             <Image
               source={require("../assets/hamburger.png")}
               style={styles.hamburger}
