@@ -54,7 +54,7 @@ class ChatBot extends Component {
         text: message,
         createdAt: new Date(),
         user: {
-          _id:1
+          _id:1,
         }
       }
 
@@ -972,7 +972,7 @@ class ChatBot extends Component {
                   title: <Text style={{fontWeight: "bold"}}>Money Matters</Text>,
                   value: '008102',
                 },
-                { 
+                {
                   title: <Text style={{fontWeight: "bold"}}>Student Crisis Fund</Text>,
                   value: '008103',
                 },

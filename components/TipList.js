@@ -21,7 +21,7 @@ const TipList = () => {
     {
       id: "01",
       title: "Sleep",
-      link: "HealthTips",
+      link: "Sleep",
     },
     {
       id: "02",
@@ -44,12 +44,12 @@ const TipList = () => {
   const navigation = useNavigation();
 
   const Item = ({ title, link }) => (
-    <TouchableOpacity style={[styles.container, styles.shadowProp]}  onPress={() => navigation.navigate("Dashboard", {screen: "Stress"})}>
+    <TouchableOpacity style={[styles.container, styles.shadowProp]}  onPress={() => navigation.navigate("Dashboard", {screen: link})}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} />;
+  const renderItem = ({ item }) => <Item title={item.title} link={item.link}/>;
 
   return (
     <SafeAreaView>

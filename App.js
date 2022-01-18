@@ -26,6 +26,11 @@ import EmergencyScreen from "./screens/EmergencyScreen.js";
 
 //Imports "General Health Tips" Screens
 import StressScreen from "./screens/tips/StressScreen.js";
+import SleepScreen from "./screens/tips/SleepScreen.js";
+
+
+
+
 import ProfileScreen from "./screens/ProfileScreen.js";
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
@@ -53,12 +58,9 @@ function DashboardStack() {
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
       <Stack.Screen name="Emergency" component={EmergencyScreen} />
 
+      <Stack.Screen name="Stress" component={StressScreen}/>
+      <Stack.Screen name="Sleep" component={SleepScreen}/>
 
-      <Stack.Screen
-        name="Stress"
-        options={{ headerShown: false }}
-        component={StressScreen}
-      />
     </Stack.Navigator>
   );
 }
