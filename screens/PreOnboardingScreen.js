@@ -22,7 +22,7 @@ const PreOnboardingScreen = ({ navigation }) => {
   ];
 
   return (
-    <SafeAreaView style={{ flexDirection: "column", height: "100%",}}>
+    <SafeAreaView style={{ flexDirection: "column", height: "100%"}}>
 
       <ScrollView style={styles.container} scrollEnabled={false}>
       <LinearGradient
@@ -44,6 +44,9 @@ const PreOnboardingScreen = ({ navigation }) => {
             <Text style={{fontSize: 11, color: "black", fontWeight: "bold", textAlign: "center",}}>NO, LET'S BEGIN</Text>
           </TouchableOpacity>
         </View>
+        <Image style={styles.wave} source={require("../assets/white-wave.png")}/>
+        <Image style={styles.panicbot} source={require("../assets/emergencyrobot.png")}/>
+
 
       </ScrollView>
     </SafeAreaView>
@@ -62,6 +65,20 @@ const styles = StyleSheet.create({
     right: 0,
     top: 0,
     height: ScreenHeight,
+  },
+  wave: {
+    zIndex: 1,
+    position: "absolute",
+    width: "100%",
+    bottom: -620,
+  },
+  panicbot: {
+    alignSelf: "center",
+    bottom: -520,
+    position: "absolute",
+    width: 140,
+    height: 140,
+    zIndex: 3,
   },
   row: {
     flex: 1,
