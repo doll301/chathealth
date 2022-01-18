@@ -102,35 +102,45 @@ export function DrawerContent(props) {
                 <Icon name="record" color={"#95CCFF"} size={30} />
               )}
               label="Nutrition"
-              onPress={() => {}}
+              onPress={() =>
+                navigation.navigate("Topic", { screen: "Nutrition" })
+              }
             />
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon name="record" color={"#FBDC8E"} size={30} />
               )}
               label="Primary Care"
-              onPress={() => {}}
+              onPress={() =>
+                navigation.navigate("Topic", { screen: "PrimaryCare" })
+              }
             />
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon name="record" color={"#D382B3"} size={30} />
               )}
               label="Physical Health"
-              onPress={() => {}}
+              onPress={() =>
+                navigation.navigate("Topic", { screen: "PhysicalHealth" })
+              }
             />
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon name="record" color={"#F6A6A6"} size={30} />
               )}
               label="Sexual Health"
-              onPress={() => {}}
+              onPress={() =>
+                navigation.navigate("Topic", { screen: "SexualHealth" })
+              }
             />
             <DrawerItem
               icon={({ color, size }) => (
                 <Icon name="record" color={"#FFE4D8"} size={30} />
               )}
               label="Urgent Care"
-              onPress={() => {}}
+              onPress={() =>
+                navigation.navigate("Topic", { screen: "UrgentCare" })
+              }
             />
           </Drawer.Section>
         </View>

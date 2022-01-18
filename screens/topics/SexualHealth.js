@@ -10,10 +10,10 @@ import {
   SafeAreaView,
 } from "react-native";
 
-const MentalScreen = ({ navigation }) => {
+const SexualScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ flex: 1, backgroundColor: "#D2EDB0" }}>
+      <View style={{ flex: 1, backgroundColor: "#F6A6A6" }}>
         <TouchableOpacity
           style={styles.backbuttonwrapper}
           onPress={() => navigation.navigate("Home")}
@@ -21,7 +21,7 @@ const MentalScreen = ({ navigation }) => {
           <Text style={styles.backbutton}>◀︎ Home</Text>
         </TouchableOpacity>
 
-        <Text style={styles.title_text}>Mental Health</Text>
+        <Text style={styles.title_text}>Sexual Health</Text>
       </View>
       <View
         style={{
@@ -185,7 +185,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 12,
-    backgroundColor: "#D2EDB0",
+    backgroundColor: "#F6A6A6",
   },
   subtopic_text: {
     fontWeight: "bold",
@@ -209,4 +209,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MentalScreen;
+export default SexualScreen;

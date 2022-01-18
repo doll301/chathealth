@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import * as WebBrowser from 'expo-web-browser';
+import * as WebBrowser from "expo-web-browser";
 
 const HealthcareList = () => {
   const DATA = [
@@ -33,13 +33,16 @@ const HealthcareList = () => {
       id: "13",
       title: "Counseling Center Appointment",
       img: require("../assets/my-healthcare-list/counseling-center.png"),
-      url: "https://www.counseling.umd.edu/"
+      url: "https://www.counseling.umd.edu/",
     },
   ];
 
   /* Simply renders a pressable component with the title displayed */
   const Item = ({ title, img, url }) => (
-    <TouchableOpacity style={[styles.container, styles.shadowProp]} onPress={() => WebBrowser.openBrowserAsync(url)}>
+    <TouchableOpacity
+      style={[styles.container, styles.shadowProp]}
+      onPress={() => WebBrowser.openBrowserAsync(url)}
+    >
       <Image
         source={img}
         style={{ resizeMode: "contain", height: 100, width: 200 }}
@@ -48,7 +51,9 @@ const HealthcareList = () => {
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} img={item.img} url={item.url}/>;
+  const renderItem = ({ item }) => (
+    <Item title={item.title} img={item.img} url={item.url} />
+  );
 
   return (
     <SafeAreaView>

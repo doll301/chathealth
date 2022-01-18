@@ -36,6 +36,11 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 // Individual Topic screens
 import MentalScreen from "./screens/topics/MentalHealth";
+import NutritionScreen from "./screens/topics/Nutrition";
+import PrimaryCareScreen from "./screens/topics/PrimaryCare";
+import PhysicalScreen from "./screens/topics/PhysicalHealth";
+import SexualScreen from "./screens/topics/SexualHealth";
+import UrgentCareScreen from "./screens/topics/UrgentCare";
 
 {
   /* Initializes component we can use to enable navigation between multiple screens. */
@@ -73,6 +78,31 @@ function TopicStack() {
       <Stack.Screen
         name="Mental"
         component={MentalScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Nutrition"
+        component={NutritionScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PrimaryCare"
+        component={PrimaryCareScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PhysicalHealth"
+        component={PhysicalScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="SexualHealth"
+        component={SexualScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="UrgentCare"
+        component={UrgentCareScreen}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

@@ -129,7 +129,7 @@ const ExploreTopicsList = () => {
   ];
 
   return (
-    <View style={{paddingBottom: 340,}}>
+    <View style={{ paddingBottom: 340 }}>
       {/* Sexual Health card */}
       <TouchableOpacity style={[styles.container, styles.container1]}>
         <View style={styles.container_text}>
@@ -161,18 +161,20 @@ const ExploreTopicsList = () => {
       {/* Primary care card */}
       <TouchableOpacity style={[styles.container, styles.container5]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_details_alternative}>{DATA[4].description}</Text>
+          <Text style={styles.text_details_alternative}>
+            {DATA[4].description}
+          </Text>
         </View>
       </TouchableOpacity>
 
       {/* Urgent care card */}
-      <TouchableOpacity style={[styles.container,  styles.container6]}>
+      <TouchableOpacity style={[styles.container, styles.container6]}>
         <View style={styles.container_text}>
-          <Text style={styles.text_details_alternative}>{DATA[5].description}</Text>
+          <Text style={styles.text_details_alternative}>
+            {DATA[5].description}
+          </Text>
         </View>
       </TouchableOpacity>
-
-
     </View>
   );
 };
@@ -199,7 +201,6 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 40,
     width: "70%",
     backgroundColor: "#F6A6A6",
-
   },
   container2: {
     borderTopRightRadius: 40,
@@ -209,7 +210,6 @@ const styles = StyleSheet.create({
     width: "70%",
     alignSelf: "flex-end",
     backgroundColor: "#5CA67F",
-
   },
   container3: {
     borderTopRightRadius: 40,
@@ -218,7 +218,6 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 40,
     width: "70%",
     backgroundColor: "#D382B3",
-
   },
   container4: {
     borderTopRightRadius: 40,
@@ -228,7 +227,6 @@ const styles = StyleSheet.create({
     width: "70%",
     alignSelf: "flex-end",
     backgroundColor: "#95CCFF",
-
   },
   container5: {
     borderTopRightRadius: 40,
@@ -236,8 +234,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 0,
     borderBottomLeftRadius: 0,
     width: "70%",
-    backgroundColor: "#FBDC8E"
-
+    backgroundColor: "#FBDC8E",
   },
   container6: {
     borderTopRightRadius: 40,
@@ -247,7 +244,6 @@ const styles = StyleSheet.create({
     width: "70%",
     alignSelf: "flex-end",
     backgroundColor: "#FFE4D8",
-
   },
   container_text: {
     paddingLeft: 12,
@@ -268,7 +264,7 @@ const styles = StyleSheet.create({
     color: "white",
     marginBottom: 3,
     marginRight: 20,
-    textAlign: "center"
+    textAlign: "center",
   },
   /* For last two "Topics" bubbles to be grey */
   text_details_alternative: {
@@ -276,7 +272,7 @@ const styles = StyleSheet.create({
     color: "grey",
     marginBottom: 3,
     marginRight: 20,
-    textAlign: "center"
+    textAlign: "center",
   },
 
   shadowProp: {
