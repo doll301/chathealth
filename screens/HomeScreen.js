@@ -45,13 +45,13 @@ const onPressTouch = () => {
 
   return (
 
-    <SafeAreaView style={{ flexDirection: "column" }}>
+    <SafeAreaView style={{ flexDirection: "column", backgroundColor: "#CAE7F8"}}>
 
         {/* Stuff at the top wrapped in this View:
           blue swoosh; welcome message; emergency banner */}
         <View>
 
-        <TouchableOpacity onPress={onPressTouch}>
+        <TouchableOpacity onPress={onPressTouch} style={{paddingBottom: 15, backgroundColor: "white"}}>
           {/* Blue swoosh at the top of the page */}
           <Image
             source={require("../assets/blue-wave.png")}
@@ -125,7 +125,7 @@ const onPressTouch = () => {
                 fontSize: 15,
               }}
             >
-              Your Healthcare
+              Your Saved Resources
             </Text>
           </View>
 
@@ -136,15 +136,15 @@ const onPressTouch = () => {
               style={{ flexDirection: "row", left: 8, marginTop: 10 }}
               horizontal={true}
             >
-              <TouchableOpacity style={styles.health_bubble}>
+              <View style={styles.health_bubble}>
                 <Text>Women's Health</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.health_bubble}>
+              </View>
+              <View style={styles.health_bubble}>
                 <Text>Primary Care</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.health_bubble}>
+              </View>
+              <View style={styles.health_bubble}>
                 <Text>Mental Health</Text>
-              </TouchableOpacity>
+              </View>
             </ScrollView>
             {/* Our custom FlatList component for displaying healthcare cards in a list */}
             <HealthcareList />
@@ -176,7 +176,7 @@ const onPressTouch = () => {
         {/* Education from around campus list (uses custom EducationList list) */}
         <View>
           <Text
-            style={{ marginTop: 20, left: 20, color: "#444444", fontSize: 15 }}
+            style={{ marginTop: 30, left: 20, color: "#444444", fontSize: 15 }}
           >
             Education From Around Campus
           </Text>
@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
   },
   hamburgerwrapper: {
     paddingTop: 30,
-    paddingLeft: 23,
+    paddingLeft: 28,
     paddingRight: 20,
     paddingBottom: 20,
     justifyContent: "flex-start",
@@ -275,7 +275,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   red_banner: {
-    marginTop: 15,
+    marginTop: 0,
     backgroundColor: "#FF7373",
     width: "100%",
     height: 25,
