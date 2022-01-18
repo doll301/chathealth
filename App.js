@@ -10,6 +10,7 @@ import {
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import {Navigation} from "react-native-navigation"
 //Initializes component we can use to enable navigation between multiple screens.
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { DrawerContent } from "./components/drawercontent";
@@ -42,11 +43,16 @@ import PhysicalScreen from "./screens/topics/PhysicalHealth";
 import SexualScreen from "./screens/topics/SexualHealth";
 import UrgentCareScreen from "./screens/topics/UrgentCare";
 
+
+
+
 {
   /* Initializes component we can use to enable navigation between multiple screens. */
 }
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
+
+
 
 function DashboardStack() {
   return (
@@ -55,18 +61,18 @@ function DashboardStack() {
         headerShown: false,
       }}
     >
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Events" component={EventScreen} />
+      <Stack.Screen name="Home" component={HomeScreen}  />
+      <Stack.Screen name="Events" component={EventScreen}/>
       <Stack.Screen name="ChatBot" component={BotScreen} />
       <Stack.Screen name="NewEvent" component={NewEventScreen} />
       <Stack.Screen name="Emergency" component={EmergencyScreen} />
-
       <Stack.Screen name="Stress" component={StressScreen} />
       <Stack.Screen name="Sleep" component={SleepScreen} />
       <Stack.Screen name="COVIDProtocol" component={COVIDProtocolScreen} />
     </Stack.Navigator>
   );
 }
+
 
 function TopicStack() {
   return (
@@ -125,8 +131,10 @@ function ProfileStack() {
   );
 }
 
+
 // This is the entry point of our app!!
 export default function App() {
+
   return (
     <NavigationContainer>
       <Drawer.Navigator

@@ -7,6 +7,9 @@ import {
   VirtualizedList,
 } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+
+
 
 const ExploreTopicsList = () => {
   const DATA = [
@@ -127,39 +130,41 @@ const ExploreTopicsList = () => {
       }),
     },
   ];
+  const navigation = useNavigation();
 
   return (
+
     <View style={{ paddingBottom: 340 }}>
       {/* Sexual Health card */}
-      <TouchableOpacity style={[styles.container, styles.container1]}>
+      <TouchableOpacity style={[styles.container, styles.container1]} onPress={() => navigation.navigate("Topic", { screen: "SexualHealth" })}>
         <View style={styles.container_text}>
           <Text style={styles.text_details}>{DATA[0].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Mental Health card */}
-      <TouchableOpacity style={[styles.container, styles.container2]}>
+      <TouchableOpacity style={[styles.container, styles.container2]} onPress={() => navigation.navigate("Topic", {screen: "MentalHealth"})}>
         <View style={styles.container_text}>
           <Text style={styles.text_details}>{DATA[1].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Mental Health card */}
-      <TouchableOpacity style={[styles.container, styles.container3]}>
+      <TouchableOpacity style={[styles.container, styles.container3]} onPress={() => navigation.navigate("Topic", { screen: "PhysicalHealth" })}>
         <View style={styles.container_text}>
           <Text style={styles.text_details}>{DATA[2].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Nutrition card */}
-      <TouchableOpacity style={[styles.container, styles.container4]}>
+      <TouchableOpacity style={[styles.container, styles.container4]} onPress={() => navigation.navigate("Topic", { screen: "Nutrition" })}>
         <View style={styles.container_text}>
           <Text style={styles.text_details}>{DATA[3].description}</Text>
         </View>
       </TouchableOpacity>
 
       {/* Primary care card */}
-      <TouchableOpacity style={[styles.container, styles.container5]}>
+      <TouchableOpacity style={[styles.container, styles.container5]} onPress={() => navigation.navigate("Topic", { screen: "PrimaryCare" })}>
         <View style={styles.container_text}>
           <Text style={styles.text_details_alternative}>
             {DATA[4].description}
@@ -168,7 +173,7 @@ const ExploreTopicsList = () => {
       </TouchableOpacity>
 
       {/* Urgent care card */}
-      <TouchableOpacity style={[styles.container, styles.container6]}>
+      <TouchableOpacity style={[styles.container, styles.container6]} onPress={() => navigation.navigate("Topic", { screen: "UrgentCare" })}>
         <View style={styles.container_text}>
           <Text style={styles.text_details_alternative}>
             {DATA[5].description}
