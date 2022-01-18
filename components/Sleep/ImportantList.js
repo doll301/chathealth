@@ -5,51 +5,49 @@ import {
   FlatList,
   Text,
   TouchableOpacity,
+  Image,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 
-
-
-
-const TipList = () => {
-  const TIP_DATA = [
+const ImportantList = () => {
+  const DATA = [
     {
-      id: "00",
-      title: "Stress and Anxiety",
-      link: "Stress",
+      id: "10",
+      title: "Sleep is crucial to our well-being.",
+      img: require("../../assets/generalhealthtips/sleep-bed.png"),
     },
     {
-      id: "01",
-      title: "Sleep",
-      link: "Sleep",
+      id: "11",
+      title: "Sleep reduces stress.",
+      img: require("../../assets/generalhealthtips/sleep-storm.png"),
     },
     {
-      id: "02",
-      title: "COVID-19 Protocol",
-      link: "COVIDProtocol",
+      id: "12",
+      title: "Sleep regulates your moods.",
+      img: require("../../assets/generalhealthtips/sleep-mood.png"),
     },
+
+
   ];
 
-  /* Simply renders a pressable component with the title displayed */
-  const navigation = useNavigation();
-
-  const Item = ({ title, link }) => (
-    <TouchableOpacity style={[styles.container, styles.shadowProp]}  onPress={() => navigation.navigate("Dashboard", {screen: link})}>
+  const Item = ({ title, img }) => (
+    <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+      <Image
+        source={img}
+        style={{ resizeMode: "contain", height: 60, width: 60}}
+      />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} link={item.link}/>;
+  const renderItem = ({ item }) => <Item title={item.title} img={item.img} />;
 
   return (
     <SafeAreaView>
       <FlatList
-        data={TIP_DATA}
+        data={DATA}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         horizontal={true}
-        showsHorizontalScrollIndicator={false}
-
       />
     </SafeAreaView>
   );
@@ -57,15 +55,15 @@ const TipList = () => {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
     flexDirection: "column",
     justifyContent: "center",
     marginHorizontal: 10,
-    marginBottom: 10,
+    marginBottom: 5,
     marginTop: 20,
-    padding: 3,
-    width: "auto",
-    paddingHorizontal: 20,
-    height: 50,
+    padding: 5,
+    width: 180,
+    height: 170,
     borderStyle: "solid",
     borderRadius: 10,
     borderColor: "#F0F2F4",
@@ -76,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
-    margin: 0,
+    margin: 20,
   },
   shadowProp: {
     shadowColor: "#171717",
@@ -86,4 +84,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TipList;
+export default ImportantList;

@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, Linking, TouchableOpacity } from "react-native";
 import { Bubble, GiftedChat } from "react-native-gifted-chat";
 
+
 import * as WebBrowser from 'expo-web-browser';
 import { NavigationContainer } from '@react-navigation/native';
+import { TypingAnimation } from "react-native-typing-animation";
+
 
 class ChatBot extends Component {
   state ={
     messages: [
     {
     _id: 1,
-    text: "Welcome to Chat Health. Are you experiencing a medical emergency? Select 'Yes' to open the emergency dashboard.",
+    text: "Welcome to Chat Health! Are you experiencing a medical emergency? Select 'Yes' to open the emergency dashboard.",
     createdAt: new Date(),
     user: {
       _id: 2,
@@ -48,15 +51,17 @@ class ChatBot extends Component {
  //  }
 
   onQuickReply(quickReply) {
+
       let message = quickReply[0].title;
       let msg = {
         _id: 1,
         text: message,
         createdAt: new Date(),
         user: {
-          _id:1
+          _id:1,
         }
       }
+
 
 
       this.setState(previousState => ({
@@ -384,6 +389,319 @@ class ChatBot extends Component {
           messages: GiftedChat.append(previousState.messages, [reply5]),
         }));
 
+
+      } else if (quickReply[0].value == "006") {
+        let reply = {
+          _id: 1,
+          text: "Would you like to see available campus resources or ask a question about physical health?",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>See Resources</Text>,
+                value: '0061',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Ask a Question</Text>,
+                value: '0062',
+              },
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      } else if (quickReply[0].value == "0061") {
+        let reply = {
+          _id: 1,
+          text: "Select a physical health resource to learn more.",
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold"}}>Primary Care</Text>,
+                value: '006101',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Walk-In Clinic</Text>,
+                value: '006102',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Allergy Clinic</Text>,
+                value: '006103',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Immunization</Text>,
+                value: '006104',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Eating Disorders</Text>,
+                value: '006105',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Sexual health</Text>,
+                value: '0101',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Nutrition</Text>,
+                value: '006105',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Alcohol</Text>,
+                value: '006107',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Recreation and Wellness (RecWell)</Text>,
+                value: '006108',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Sports Medicine</Text>,
+                value: '006109',
+              },
+
+
+            ],
+          }
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006101") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/primary-care")}}>The Primary Care department offers general medical services including evaluation of non-emergency health conditions, routine physicals, and follow up appointments for chronic medical conditions. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006102") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/walk-services ")}}>The Walk-In department treats urgent medical conditions including, but not limited to, asthma or trouble breathing, chest pain, allergic reaction, dehydration, high fever, UTI, and bone or joint injuries. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006103") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/allergy-clinic")}}>The Allergy Clinic administers allergy injections to students under the direction of their allergist or another physician. Allergy injections are administered by appointment only. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006104") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/immunizations")}}>The University of Maryland requires all students to complete the University Health Center Immunization Record Form and submit proof of immunizations in order to attend University of Maryland and register for classes. The University Health Center offers routine immunizations such as MMR, Meningitis, Tetanus/Diphtheria, Tuberculosis skin testing, Hepatitis B, Chicken Pox, and Flu vaccines. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006105") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health-behavioral-health-services/eating-disorders")}}>The University Health Center offers support for students struggling with eating concerns, body image, and/or excessive exercise. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006106") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/nutrition-services")}}>The UHC Nutrition Service unit offers consultation with a registered dietitian for $20/session for students and $55/session for faculty and staff. The Nutrition Service also offers nutrition coaching from undergraduate dietetic students through the Peer Nutrition Coaching Service. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006107") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/alcohol-other-drug-education")}}>The Alcohol and Other Drug Education program offers individual consultations for questions and concerns about substance use. The program also offers introductory, asynchronous presentations about alcohol use, stress management, and sexual health to classrooms, student groups, and residence halls. Click this link to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006108") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://recwell.umd.edu/facilities/facilities-0")}}>UMD RecWell offers recreational facilities available to students. Click this message to see a list of facilities on campus.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006108") {
+        let reply = {
+          _id: 1,
+          text: <Text onPress={() => {WebBrowser.openBrowserAsync("https://umterps.com/sports/2018/3/12/sports-medicine-services.aspx")}}>Sports Medicine Services provides comprehensive care for students participating in intercollegiate athletics. Click this message to learn more.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "0062") {
+        let reply = {
+          _id: 1,
+          text: <Text>What can I answer for you?</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+          quickReplies: {
+            type: 'radio',
+            keepIt: true,
+            values: [
+              {
+                title: <Text style={{fontWeight: "bold",}}>What do I need to bring to my primary care or walk-in clinic visits?</Text>,
+                value: '006201',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>Where is the UMD University Health Center located?</Text>,
+                value: '006202',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What services does Primary Care Services provide?</Text>,
+                value: '006203',
+              },
+              {
+                title: <Text style={{fontWeight: "bold"}}>What should I do if I, my friend, or a peer is having a physical health emergency?</Text>,
+                value: '006204',
+              },
+
+            ],
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+      }else if (quickReply[0].value == "006201") {
+        let reply = {
+          _id: 1,
+          text: <Text>Please bring your University ID, health insurance card and a method of payment to your visit. If you are able, please also bring all of your medications and medical records to your visit.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006202") {
+        let reply = {
+          _id: 1,
+          text: <Text>The UMD University Health Center is located at 140 Campus Dr, College Park, MD 20740.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006203") {
+        let reply = {
+          _id: 1,
+          text: <Text>Primary Care Services are able to help with non-emergency conditions, such as colds and flu‐like illnesses, rashes and other skin disorders, headaches and dizziness, ear infections, sore throat/strep throat/mononucleosis, asthma and seasonal allergies, and screening/testing/treatment for sexually transmitted diseases.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
+
+      }else if (quickReply[0].value == "006204") {
+        let reply = {
+          _id: 1,
+          text: <Text>You may access UMD Walk-In Services for emergency services, such as an asthma attack or trouble breathing, chest pain, allergic reaction, dehydration, high fever, urinary tract infection, or bone or joint injuries. If Walk-In Services is closed, please call 911.</Text>,
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'FAQ Bot',
+            avatar: require("../assets/chatbotpfp.png"),
+          },
+        }
+        this.setState(previousState => ({
+          messages: GiftedChat.append(previousState.messages, [reply]),
+        }));
 
       }else if (quickReply[0].value == "007") {
         let reply = {
@@ -1360,10 +1678,13 @@ class ChatBot extends Component {
           style={styles.backbuttonwrapper}
           onPress={() => this.props.navigation.navigate('Home')}>
           <Text style={styles.backbutton}>◀︎ Home</Text>
+
         </TouchableOpacity>
+
         <Text style={styles.general_health_tips}>
           Beta Bot
         </Text>
+
 
         <GiftedChat
           messages={this.state.messages}

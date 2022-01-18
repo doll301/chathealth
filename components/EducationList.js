@@ -5,6 +5,7 @@ import {
   View,
   FlatList,
   Text,
+  Image,
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
@@ -20,6 +21,7 @@ const EducationList = () => {
         "A Guide for Transgender, Non-Binary, and Gender Non-Conforming Terps",
       url: "https://health.umd.edu/sites/default/files/inline-files/Guide-links.pdf",
       group: "University Health Center",
+      img: require("../assets/education-list/greenbackground.png"),
       card_style: StyleSheet.create({
         container: {
           marginHorizontal: 10,
@@ -59,6 +61,11 @@ const EducationList = () => {
           flexWrap: "wrap",
           textAlign: "right",
         },
+        imgstyle: {
+          position: "absolute",
+          right: 5,
+          top: 10
+        },
       }),
     },
     {
@@ -66,7 +73,7 @@ const EducationList = () => {
       title: "Wellness Toolkit",
       url: "https://health.umd.edu/sites/default/files/inline-files/Wellness%20Toolkit%20_Revised%20October%202021%20%281%29_0.pdf",
       group: "University Health Center",
-      img: require("../assets/education-list/orange-rectangle.png"),
+      img: require("../assets/education-list/orangebackground.png"),
       card_style: StyleSheet.create({
         container: {
           marginHorizontal: 10,
@@ -106,14 +113,22 @@ const EducationList = () => {
           flexWrap: "wrap",
           textAlign: "right",
         },
+        imgstyle: {
+          position: "absolute",
+          left: -10,
+          top: 15,
+          height: 130,
+          width: 130,
+
+        },
       }),
     },
     {
       id: "2",
-      title: "Healthy Terps Newsletter: October",
+      title: "Healthy Terps Newsletter: \nOctober",
       url: "https://www.canva.com/design/DAEJTllSHAk/XzAc21qN5xgoKeP7cgjhmA/view?utm_content=DAEJTllSHAk&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton#1",
       group: "Student Health Advisory Committee",
-      img: require("../assets/education-list/blue-rectangle.png"),
+      img: require("../assets/education-list/bluebackground.png"),
       card_style: StyleSheet.create({
         container: {
           marginHorizontal: 10,
@@ -152,6 +167,11 @@ const EducationList = () => {
           flexWrap: "wrap",
           textAlign: "right",
         },
+        imgstyle: {
+          position: "absolute",
+          right: 5,
+          top: 10
+        },
       }),
     },
   ];
@@ -159,10 +179,11 @@ const EducationList = () => {
 
 
   /* Simply renders a pressable component with the title displayed */
-  const Item = ({ title, url, group, card_style}) => (
+  const Item = ({ title, url, group, img, card_style}) => (
     <TouchableOpacity style={[card_style.container, styles.shadowProp]}
     onPress={() => {WebBrowser.openBrowserAsync(url)}}
     >
+    <Image source={img} style={card_style.imgstyle} />
       <View style={card_style.container_title}>
         <Text style={card_style.text_title}>{title}</Text>
       </View>
@@ -173,7 +194,7 @@ const EducationList = () => {
   );
 
   const renderItem = ({ item }) => (
-    <Item title={item.title} url={item.url} group={item.group} card_style={item.card_style} />
+    <Item title={item.title} url={item.url} group={item.group} img={item.img} card_style={item.card_style} />
   );
 
   return (
