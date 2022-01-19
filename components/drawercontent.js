@@ -93,7 +93,7 @@ export function DrawerContent(props) {
               icon={({ color, size }) => (
                 <Icon name="record" color={"#D2EDB0"} size={30} />
               )}
-              label="Mental Health"
+              label="Emotional Health"
               onPress={() => navigation.navigate("Topic", { screen: "Mental" })}
             />
 

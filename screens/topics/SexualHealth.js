@@ -1,16 +1,106 @@
-import React from "react";
+import React, { useState, useEffect }  from "react";
 import {
   StyleSheet,
   TouchableOpacity,
   View,
+  Button,
+  Linking,
   Image,
   Text,
   ImageBackground,
   ScrollView,
   SafeAreaView,
 } from "react-native";
+import * as WebBrowser from 'expo-web-browser';
 
-const SexualScreen = ({ navigation }) => {
+
+const MentalScreen = ({ navigation }) => {
+  const [view, setView] = useState("B");
+
+  const PreventionContent = () => (
+    <View>
+    <ScrollView
+      style={{ flexDirection: "row", left: 8, marginTop: 10 }}
+      horizontal={true}
+    >
+      <TouchableOpacity style={styles.highlight} onPress={() => setView("A")}>
+        <Text style={styles.subtopic_text}>Prevention</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subtopics} onPress={() => setView("B")}>
+        <Text style={styles.subtopic_text}>University Services</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subtopics}>
+        <Text style={styles.subtopic_text} onPress={() => setView("C")}>University Offices</Text>
+      </TouchableOpacity>
+    </ScrollView>
+
+    <ScrollView style={{ marginTop: 12 }}>
+              <View style={styles.boxed_content}>
+                <Text style={styles.boxed_content_text}>The Centers for Disease Control and Prevention (CDC) recommend that sexually active individuals be STI screened at least once a year or in between new partners.</Text>
+              </View>
+              <View style={styles.boxed_content}>
+                <Text style={styles.boxed_content_text}>If you need assistance in finding the best method birth control method to fit your life and your needs, you can schedule a free consultation with the Sexual Health and Wellness coordinator on myUHC.</Text>
+              </View>
+        </ScrollView>
+      </View>
+  );
+  const ServicesContent = () => (
+    <View>
+    <ScrollView
+      style={{ flexDirection: "row", left: 8, marginTop: 10 }}
+      horizontal={true}
+    >
+    <TouchableOpacity style={styles.highlight} onPress={() => setView("B")}>
+      <Text style={styles.subtopic_text}>University Services</Text>
+    </TouchableOpacity>
+
+      <TouchableOpacity style={styles.subtopics} onPress={() => setView("A")}>
+        <Text style={styles.subtopic_text}>Prevention</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subtopics}>
+        <Text style={styles.subtopic_text} onPress={() => setView("C")}>University Offices</Text>
+      </TouchableOpacity>
+    </ScrollView>
+
+    <ScrollView style={{ marginTop: 12}}>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health ")}>
+                <Text style={styles.boxed_content_text} >The Sexual Health program provides sexual health supplies, peer education programs, free emergency contraception, and individual sexual health consultations.</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/HormoneTherapy")}>
+                <Text style={styles.boxed_content_text}>The UHC offers appointments for students seeking hormone initiation and management.</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/womens-health")}>
+                <Text style={styles.boxed_content_text}>Women's Health Services specializes in care for people with a uterus, vagina, or breasts, regardless of gender identity.</Text>
+              </TouchableOpacity>
+  </ScrollView>
+      </View>
+  );
+  const OfficesContent = () => (
+    <View>
+    <ScrollView
+      style={{ flexDirection: "row", left: 8, marginTop: 10 }}
+      horizontal={true}
+    >
+    <TouchableOpacity style={styles.highlight}>
+      <Text style={styles.subtopic_text} onPress={() => setView("C")}>University Offices</Text>
+    </TouchableOpacity>
+      <TouchableOpacity style={styles.subtopics} onPress={() => setView("A")}>
+        <Text style={styles.subtopic_text}>Prevention</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.subtopics} onPress={() => setView("B")}>
+        <Text style={styles.subtopic_text}>University Services</Text>
+      </TouchableOpacity>
+    </ScrollView>
+
+    <ScrollView style={{ marginTop: 12 }}>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/hpws")}>
+                <Text style={styles.boxed_content_text}>UMD Health Promotion and Wellness Services</Text>
+              </TouchableOpacity>
+        </ScrollView>
+      </View>
+  );
+
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{ flex: 1, backgroundColor: "#F6A6A6" }}>
@@ -49,57 +139,39 @@ const SexualScreen = ({ navigation }) => {
             horizontal={true}
           >
             <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Common Topic #1</Text>
-              <Text style={styles.detail_text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+              <Text style={styles.topic_text}>STI Testing</Text>
+              <Text style={styles.detail_text}>The CDC recommends that sexually active individuals be STI screened at least once a year or in between new partners.</Text>
+            </View>
+            <View style={styles.common_topics}>
+              <Text style={styles.topic_text}>Birth Control</Text>
+              <Text style={styles.detail_text}>For help selecting a birth control method, you can schedule a free consultation with the Sexual Health and Wellness coordinator on myUHC.
               </Text>
             </View>
             <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Common Topic #2</Text>
-              <Text style={styles.detail_text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
-              </Text>
-            </View>
-            <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Common Topic #3</Text>
-              <Text style={styles.detail_text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt.
+              <Text style={styles.topic_text}>Sexual Health Supplies</Text>
+              <Text style={styles.detail_text}>The Health Promotion and Wellness Services front desk offers free condoms, insertive FC2 condoms, lubrication, safer sex kits and abstinence kits.
+
               </Text>
             </View>
           </ScrollView>
 
-          {/* List under "Common Topics" */}
-          <ScrollView
-            style={{ flexDirection: "row", left: 8, marginTop: 10 }}
-            horizontal={true}
-          >
-            <View style={styles.prevention}>
-              <Text style={styles.subtopic_text}>Prevention</Text>
-            </View>
-            <View style={styles.subtopics}>
-              <Text style={styles.subtopic_text}>University Services</Text>
-            </View>
-            <View style={styles.subtopics}>
-              <Text style={styles.subtopic_text}>University Offices</Text>
-            </View>
-          </ScrollView>
 
-          <ScrollView style={{ marginTop: 12 }}>
-            <View style={styles.boxed_content}>
-              <Text style={styles.boxed_content_text}>Lorem ipsum dolor?</Text>
-            </View>
-            <View style={styles.boxed_content}>
-              <Text style={styles.boxed_content_text}>Lorem ipsum dolor?</Text>
-            </View>
-            <View style={styles.boxed_content}>
-              <Text style={styles.boxed_content_text}>Lorem ipsum dolor?</Text>
-            </View>
-          </ScrollView>
-        </View>
+          <View>
+              {view === "A" ?
+                <PreventionContent />
+              : null}
+
+              {view === "B" ?
+              <ServicesContent />
+              : null}
+
+              {view === "C" ?
+              <OfficesContent />
+              : null}
+          </View>
       </View>
+      </View>
+
     </SafeAreaView>
   );
 };
@@ -154,7 +226,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     height: 136,
     width: 188,
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     padding: 12,
   },
   shadowProp: {
@@ -175,7 +247,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 12,
   },
-  prevention: {
+  highlight: {
     margin: 10,
     borderRadius: 15,
     borderColor: "#F0F2F4",
@@ -194,19 +266,21 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   boxed_content: {
-    margin: 10,
+    margin: 5,
+    paddingTop: 25,
+    paddingBottom: 15,
     borderRadius: 20,
-    height: 115,
+    height: "auto",
     backgroundColor: "#dedede",
-    width: "90%",
-    padding: 20,
+    width: "95%",
+    paddingHorizontal: 15,
     justifyContent: "flex-end",
   },
   boxed_content_text: {
-    fontWeight: "bold",
-    fontSize: 16,
+    fontWeight: "500",
+    fontSize: 14,
     letterSpacing: 0.75,
   },
 });
 
-export default SexualScreen;
+export default MentalScreen;
