@@ -15,35 +15,37 @@ const UrgentCareList = () => {
   const DATA = [
     {
       id: "20",
-      title: "Sutter Health",
-      url: "https://www.sutterhealth.org/",
-      img: require("../assets/urgent-cares/sutter.png"),
-      distance: 2.1,
-    },
-    {
-      id: "21",
-      title: "Carbon",
-      url:"https://carbonhealth.com/",
-      img: require("../assets/urgent-cares/carbon.png"),
-      distance: 1.6,
+      title: "Kaiser \nPermanente",
+      url: "https://healthy.kaiserpermanente.org/maryland-virginia-washington-dc/facilities/Manassas-Medical-Center-Limited-Services-100409",
+      img: require("../assets/urgent-cares/kaiser.png"),
+      distance: 2.5,
     },
     {
       id: "22",
-      title: "Mayo Clinic",
-      url: "https://www.mayoclinichealthsystem.org/services-and-treatments/urgent-care",
-      img: require("../assets/urgent-cares/mayo.png"),
-      distance: 13.2,
+      title: "CVS MinuteClinic",
+      url:"https://www.cvs.com/minuteclinic/clinic-locator/md/hyattsville/",
+      img: require("../assets/urgent-cares/minute.png"),
+      distance: 3.0,
     },
+    {
+      id: "24",
+      title: "Adventist \nHealth Care",
+      url:"https://www.adventisthealthcare.com/locations/profile/white-oak-medical-center/",
+      img: require("../assets/urgent-cares/adventist.jpg"),
+      distance: 2.8,
+    },
+
+
   ];
 
   /* Simply renders a pressable component with the title displayed */
   const Item = ({ title, url, img, distance }) => (
     <View>
-      <TouchableOpacity style={[styles.container, styles.shadowProp]}
+      <TouchableOpacity style={[styles.container,]}
       onPress={() => {WebBrowser.openBrowserAsync(url)}}
       >
         <View style={{ flexDirection: "row" }}>
-          <Image source={img} />
+          <Image source={img} resizeMode="contain" style={{width: 70,}}/>
           <Text style={styles.text}>{title}</Text>
         </View>
       </TouchableOpacity>
@@ -84,12 +86,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#F0F2F4",
     borderWidth: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "whtie",
   },
   text: {
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
     margin: 20,
     fontSize: 15,
   },
