@@ -133,20 +133,6 @@ const HomeScreen = ({ navigation }) => {
 
           <View style={{ backgroundColor: "#E4F3FB", paddingBottom: 20 }}>
             {/* The little ovals above the list (see Figma) */}
-            <ScrollView
-              style={{ flexDirection: "row", left: 8, marginTop: 10 }}
-              horizontal={true}
-            >
-              <View style={styles.health_bubble}>
-                <Text>Women's Health</Text>
-              </View>
-              <View style={styles.health_bubble}>
-                <Text>Primary Care</Text>
-              </View>
-              <View style={styles.health_bubble}>
-                <Text>Mental Health</Text>
-              </View>
-            </ScrollView>
             {/* Our custom FlatList component for displaying healthcare cards in a list */}
             <HealthcareList />
           </View>
