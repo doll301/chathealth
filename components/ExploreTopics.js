@@ -113,7 +113,7 @@ const ExploreTopicsList = () => {
     {
       id: 5,
       title: "Urgent Care",
-      description: "can you wait more than 20 minutes to see a clinician?",
+      description: "do you think you need urgent medical attention?",
       card_style: StyleSheet.create({
         color_block: {
           backgroundColor: "#FFE4D8",
