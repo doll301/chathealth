@@ -83,7 +83,7 @@ const SleepScreen = ({ navigation }) => {
         <Text
           style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
         >
-          Why is sleep imoprtant?
+          Why is sleep important?
         </Text>
 
         <View style={{ marginTop: 20 }}>
