@@ -2,45 +2,42 @@ import React from "react";
 import {
   StyleSheet,
   SafeAreaView,
-  View,
   FlatList,
   Text,
   TouchableOpacity,
   Image,
 } from "react-native";
+import * as WebBrowser from "expo-web-browser";
 
-const ImportantList = () => {
+
+const SafetyList = () => {
   const DATA = [
     {
       id: "10",
-      title: "Sleep is crucial to our well-being.",
-      img: require("../../assets/generalhealthtips/sleep-bed.png"),
+      title: "Mask-wearing",
+      img: require("../../assets/generalhealthtips/covid-virus.png"),
+      url: "https://umd.edu/4Maryland/health-plan#Masks"
     },
     {
       id: "11",
-      title: "Sleep reduces stress.",
-      img: require("../../assets/generalhealthtips/sleep-storm.png"),
+      title: "Vaccination Requirement",
+      img: require("../../assets/generalhealthtips/covid-shield.png"),
+      url: "https://umd.edu/4Maryland/health/covid-19-vaccine"
     },
-    {
-      id: "12",
-      title: "Sleep regulates your moods.",
-      img: require("../../assets/generalhealthtips/sleep-mood.png"),
-    },
-
 
   ];
 
-  const Item = ({ title, img }) => (
-    <View style={[styles.container, styles.shadowProp]}>
+  const Item = ({ title, img, url }) => (
+    <TouchableOpacity style={[styles.container, styles.shadowProp]} onPress={() => WebBrowser.openBrowserAsync(url)}>
       <Image
         source={img}
         style={{ resizeMode: "contain", height: 60, width: 60}}
       />
       <Text style={styles.text}>{title}</Text>
-    </View>
+    </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} img={item.img} />;
+  const renderItem = ({ item }) => <Item title={item.title} img={item.img} url={item.url}/>;
 
   return (
     <SafeAreaView>
@@ -69,7 +66,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: "#F0F2F4",
     borderWidth: 1,
-    backgroundColor: "#eeeeee",
+    backgroundColor: "#fff",
   },
   text: {
     justifyContent: "center",
@@ -85,4 +82,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ImportantList;
+export default SafetyList;

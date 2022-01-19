@@ -10,8 +10,8 @@ import {
   SafeAreaView,
 } from "react-native";
 
-import ImportantList from "../../components/Sleep/ImportantList.js";
-import ImproveList from "../../components/Sleep/ImproveList.js";
+import SafetyList from "../../components/COVIDProtocol/SafetyList.js";
+import VaxxList from "../../components/COVIDProtocol/VaxxList.js";
 
 const COVIDProtocolScreen = ({ navigation }) => {
 
@@ -78,7 +78,7 @@ const COVIDProtocolScreen = ({ navigation }) => {
         <View style={{ marginTop: 20 }}>
 
           <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
-            <ImportantList />
+            <SafetyList />
           </View>
         </View>
         <Text
@@ -90,7 +90,7 @@ const COVIDProtocolScreen = ({ navigation }) => {
         <View style={{ marginVertical: 20 }}>
 
           <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20 }}>
-            <ImproveList />
+            <VaxxList />
           </View>
         </View>
 

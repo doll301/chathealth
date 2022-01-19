@@ -8,12 +8,15 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+
+
+
 const TipList = () => {
   const TIP_DATA = [
     {
       id: "00",
-      title: "Stress and Anxiety",
-      link: "Stress",
+      title: "COVID-19 Protocol",
+      link: "COVIDProtocol",
     },
     {
       id: "01",
@@ -22,8 +25,8 @@ const TipList = () => {
     },
     {
       id: "02",
-      title: "COVID-19 Protocol",
-      link: "COVIDProtocol",
+      title: "Stress and Anxiety",
+      link: "Stress",
     },
   ];
 
@@ -31,15 +34,12 @@ const TipList = () => {
   const navigation = useNavigation();
 
   const Item = ({ title, link }) => (
-    <TouchableOpacity
-      style={[styles.container, styles.shadowProp]}
-      onPress={() => navigation.navigate("Dashboard", { screen: link })}
-    >
+    <TouchableOpacity style={[styles.container, styles.shadowProp]}  onPress={() => navigation.navigate("Dashboard", {screen: link})}>
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} link={item.link} />;
+  const renderItem = ({ item }) => <Item title={item.title} link={item.link}/>;
 
   return (
     <SafeAreaView>
@@ -49,6 +49,7 @@ const TipList = () => {
         keyExtractor={(item) => item.id}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
+
       />
     </SafeAreaView>
   );

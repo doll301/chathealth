@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import * as WebBrowser from "expo-web-browser";
+
 
 const ImproveList = () => {
   const DATA = [
@@ -14,23 +16,26 @@ const ImproveList = () => {
       id: "10",
       title: "Meditation",
       img: require("../../assets/generalhealthtips/sleep-lotus.png"),
+      url: "https://health.umd.edu/meditation"
     },
     {
       id: "11",
       title: "Light Therapy",
       img: require("../../assets/generalhealthtips/sleep-lightbulb.png"),
+      url: "https://health.umd.edu/node/389"
     },
     {
       id: "11",
       title: "Wellness Coaching",
       img: require("../../assets/generalhealthtips/sleep-hand.png"),
+      url: "https://health.umd.edu/wellness-advocacy/wellness-coaching"
     },
 
 
   ];
 
-  const Item = ({ title, img }) => (
-    <TouchableOpacity style={[styles.container, styles.shadowProp]}>
+  const Item = ({ title, img, url}) => (
+    <TouchableOpacity style={[styles.container, styles.shadowProp]} onPress={() => WebBrowser.openBrowserAsync(url)}>
       <Image
         source={img}
         style={{ resizeMode: "contain", height: 70, width: 70 }}
@@ -39,7 +44,7 @@ const ImproveList = () => {
     </TouchableOpacity>
   );
 
-  const renderItem = ({ item }) => <Item title={item.title} img={item.img} />;
+  const renderItem = ({ item }) => <Item title={item.title} img={item.img} url={item.url}/>;
 
   return (
     <SafeAreaView>

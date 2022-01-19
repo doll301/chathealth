@@ -71,18 +71,6 @@ const SleepScreen = ({ navigation }) => {
         <Text
           style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
         >
-          Why is sleep imoprtant?
-        </Text>
-
-        <View style={{ marginTop: 20 }}>
-
-          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
-            <ImportantList />
-          </View>
-        </View>
-        <Text
-          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
-        >
           How can I improve my sleep?
         </Text>
 
@@ -92,6 +80,19 @@ const SleepScreen = ({ navigation }) => {
             <ImproveList />
           </View>
         </View>
+        <Text
+          style={{ left: 15, top: 20, marginBottom: 10, color: "#000000", fontSize: 17, marginTop: 20, fontWeight: "500",}}
+        >
+          Why is sleep imoprtant?
+        </Text>
+
+        <View style={{ marginTop: 20 }}>
+
+          <View style={{ backgroundColor: "#E6E6E6", paddingBottom: 20,  }}>
+            <ImportantList />
+          </View>
+        </View>
+
 
 
       </ScrollView>
