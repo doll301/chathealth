@@ -14,7 +14,7 @@ import {
 import * as WebBrowser from 'expo-web-browser';
 
 
-const MentalScreen = ({ navigation }) => {
+const NutritionScreen = ({ navigation }) => {
   const [view, setView] = useState("B");
 
   const PreventionContent = () => (
@@ -286,4 +286,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MentalScreen;
+export default NutritionScreen;
