@@ -143,7 +143,7 @@ const ExploreTopicsList = () => {
       </TouchableOpacity>
 
       {/* Mental Health card */}
-      <TouchableOpacity style={[styles.container, styles.container2]} onPress={() => navigation.navigate("Topic", {screen: "MentalHealth"})}>
+      <TouchableOpacity style={[styles.container, styles.container2]} onPress={() => navigation.navigate("Topic", {screen: "Mental"})}>
         <View style={styles.container_text}>
           <Text style={styles.text_details}>{DATA[1].description}</Text>
         </View>
