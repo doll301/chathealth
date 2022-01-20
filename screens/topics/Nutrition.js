@@ -36,10 +36,13 @@ const NutritionScreen = ({ navigation }) => {
 
     <ScrollView style={{ marginTop: 12 }}>
               <View style={styles.boxed_content}>
-                <Text style={styles.boxed_content_text}>Being a college student can be stressful – consider self-care practices such as taking a walk outdoors, getting rest or taking a nap, meditation and breathing exercises, and relying on your support system. If you’re looking for additional support managing stress, check out the UMD Stress Management center for resources.</Text>
+                <Text style={styles.boxed_content_text}>A good diet includes a variety of foods from the major food groups and can support good physical and mental health. The major food groups are grains, proteins, dairy, fruits, and vegetables.</Text>
               </View>
               <View style={styles.boxed_content}>
-                <Text style={styles.boxed_content_text}>Meditation can be a useful antidote to stress and is often recommended as a supplemental resource for a number of health and wellness concerns. The UMD Health Center offers daily online group meditation sessions.</Text>
+                <Text style={styles.boxed_content_text}>Unhealthy eating in college can lead to lower grades, illness, fatigue, and other adverse side effects. One way to eat healthier in college, as well as save money, is to plan out meals and prepare healthy meals in bulk early in the week.</Text>
+              </View>
+              <View style={styles.boxed_content}>
+                <Text style={styles.boxed_content_text}>Your body needs to be hydrated to function at its best. Some ways to ensure that you’re hydrated is to bring a water bottle along with you everywhere and to eat water-rich foods like fruits and vegetables. </Text>
               </View>
         </ScrollView>
       </View>
@@ -63,14 +66,14 @@ const NutritionScreen = ({ navigation }) => {
     </ScrollView>
 
     <ScrollView style={{ marginTop: 12}}>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health-behavioral-health-services/behavioral-health-emergencies")}>
-                <Text style={styles.boxed_content_text} >The Mental Health Service offers brief, initial meetings to assess and stabilize students. Follow-up appointments or other recommendations may be made.</Text>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/nutrition-services")}>
+                <Text style={styles.boxed_content_text} >The UHC Nutrition Service unit offers consultation with a registered dietitian for $20/session for students and $55/session for faculty and staff. The Nutrition Service also offers nutrition coaching from undergraduate dietetic students through the Peer Nutrition Coaching Service.</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://www.counseling.umd.edu/")}>
-                <Text style={styles.boxed_content_text}>The Counseling Center offers free and confidential counseling sessions to registered UMD undergraduate and graduate students.</Text>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health-behavioral-health-services/eating-disorders")}>
+                <Text style={styles.boxed_content_text}>The University Health Center offers support for students struggling with eating concerns, body image, and/or excessive exercise. </Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => Linking.openURL(`tel:${+13013147651}`)}>
-                <Text style={styles.boxed_content_text}>The Counseling Center offers an after-hours crisis support line at (301) 314-7651.</Text>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("hhttps://health.umd.edu/medical-behavioral-health/allergy-clinic")}>
+                <Text style={styles.boxed_content_text}>The Allergy Clinic administers allergy injections to students under the direction of their allergist or another physician.</Text>
               </TouchableOpacity>
   </ScrollView>
       </View>
@@ -93,11 +96,11 @@ const NutritionScreen = ({ navigation }) => {
     </ScrollView>
 
     <ScrollView style={{ marginTop: 12 }}>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/behavioral-health")}>
-                <Text style={styles.boxed_content_text}>UMD Behavioral Health Services</Text>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/nutrition-services")}>
+                <Text style={styles.boxed_content_text}>UMD Nutrition Services</Text>
               </TouchableOpacity>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://www.counseling.umd.edu/")}>
-                <Text style={styles.boxed_content_text}>UMD Counseling Center</Text>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health-behavioral-health-services/eating-disorders")}>
+                <Text style={styles.boxed_content_text}>UMD Behavioral Health Services – Eating Disorders</Text>
               </TouchableOpacity>
         </ScrollView>
       </View>
@@ -142,18 +145,18 @@ const NutritionScreen = ({ navigation }) => {
             horizontal={true}
           >
             <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Managing Stress</Text>
-              <Text style={styles.detail_text}>Being a college student can be stressful. Check out the UMD Stress Management center for resources and support for managing stress.</Text>
-            </View>
-            <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Meditation</Text>
-              <Text style={styles.detail_text}>Meditation can be a useful antidote to stress and is often recommended as a supplemental resource for a number of health and wellness concerns.
+              <Text style={styles.topic_text}>Balanced Diet</Text>
+              <Text style={styles.detail_text}>A good diet includes a variety of foods from the major food groups – grains, proteins, dairy, fruits, and vegetables. 
               </Text>
             </View>
             <View style={styles.common_topics}>
-              <Text style={styles.topic_text}>Counseling</Text>
-              <Text style={styles.detail_text}>The Counseling Center offers free and confidential counseling sessions to registered UMD undergraduate and graduate students.
-
+              <Text style={styles.topic_text}>Hydration</Text>
+              <Text style={styles.detail_text}>Your body needs to be hydrated to function at its best. Bring a water bottle along with you everywhere and eat water-rich foods like fruits and vegetables.
+              </Text>
+            </View>
+            <View style={styles.common_topics}>
+              <Text style={styles.topic_text}>Eating Disorders</Text>
+              <Text style={styles.detail_text}>The University Health Center offers support for students struggling with eating concerns, body image, and/or excessive exercise.
               </Text>
             </View>
           </ScrollView>
