@@ -63,7 +63,7 @@ const SexualScreen = ({ navigation }) => {
     </ScrollView>
 
     <ScrollView style={{ marginTop: 12}}>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health ")}>
+              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health")}>
                 <Text style={styles.boxed_content_text} >The Sexual Health program provides sexual health supplies, peer education programs, free emergency contraception, and individual sexual health consultations.</Text>
               </TouchableOpacity>
               <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/HormoneTherapy")}>

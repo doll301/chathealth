@@ -31,9 +31,6 @@ import SleepScreen from "./screens/tips/SleepScreen.js";
 import COVIDProtocolScreen from "./screens/tips/COVIDProtocolScreen.js";
 
 import ProfileScreen from "./screens/ProfileScreen.js";
-import { LogBox } from "react-native";
-LogBox.ignoreLogs(["Warning: ..."]); // Ignore log notification by message
-LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 // Individual Topic screens
 import MentalScreen from "./screens/topics/MentalHealth";
