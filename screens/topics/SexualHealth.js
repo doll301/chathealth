@@ -63,15 +63,15 @@ const SexualScreen = ({ navigation }) => {
     </ScrollView>
 
     <ScrollView style={{ marginTop: 12}}>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health")}>
+              <View style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/wellness-advocacy/sexual-health")}>
                 <Text style={styles.boxed_content_text} >The Sexual Health program provides sexual health supplies, peer education programs, free emergency contraception, and individual sexual health consultations.</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/HormoneTherapy")}>
+              </View>
+              <View style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/HormoneTherapy")}>
                 <Text style={styles.boxed_content_text}>The UHC offers appointments for students seeking hormone initiation and management.</Text>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/womens-health")}>
+              </View>
+              <View style={styles.boxed_content} onPress={() => WebBrowser.openBrowserAsync("https://health.umd.edu/medical-behavioral-health/womens-health")}>
                 <Text style={styles.boxed_content_text}>Women's Health Services specializes in care for people with a uterus, vagina, or breasts, regardless of gender identity.</Text>
-              </TouchableOpacity>
+              </View>
   </ScrollView>
       </View>
   );
