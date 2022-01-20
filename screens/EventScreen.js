@@ -156,14 +156,13 @@ const EventScreen = ({ navigation }) => {
         showsVerticalScrollIndicator={false}
         ListFooterComponent={BlankBox}
       />
-      <Text style={{zIndex: 2, fontSize: 18, bottom: 220, alignSelf: "center"}}>Planning a health event on campus?</Text>
       <TouchableOpacity
         style={styles.add_button}
         onPress={() => navigation.navigate("NewEvent")}
       >
         <Text style={styles.add_text}>Add an Event</Text>
       </TouchableOpacity>
-      <Image source={require("../assets/eventbuttonbackground.png")} resizeMode={"stretch"} style={{position: "absolute", bottom: 80, left: -100, width: 1000}}/>
+      <Image source={require("../assets/eventbuttonbackground.png")} resizeMode={"stretch"} style={{position: "absolute", bottom: 30, left: -100, width: 1000}}/>
       </View>
     </SafeAreaView>
   );
@@ -215,7 +214,7 @@ const styles = StyleSheet.create({
   },
   add_button: {
     position: "absolute",
-    bottom: 150,
+    bottom: 120,
     justifyContent: "center",
     alignSelf: "center",
     alignItems: "center",
