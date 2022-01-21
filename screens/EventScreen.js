@@ -214,7 +214,7 @@ const styles = StyleSheet.create({
   },
   add_button: {
     position: "absolute",
-    bottom: 120,
+    bottom: 140,
     justifyContent: "center",
     alignSelf: "center",
     alignItems: "center",
