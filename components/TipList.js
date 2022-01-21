@@ -15,18 +15,18 @@ const TipList = () => {
   const TIP_DATA = [
     {
       id: "00",
-      title: "COVID-19 Protocol",
+      title: "COVID-19",
       link: "COVIDProtocol",
     },
     {
       id: "01",
-      title: "Sleep",
-      link: "Sleep",
+      title: "Stress and Anxiety",
+      link: "Stress",
     },
     {
       id: "02",
-      title: "Stress and Anxiety",
-      link: "Stress",
+      title: "Sleep",
+      link: "Sleep",
     },
   ];
 

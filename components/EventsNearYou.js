@@ -3,6 +3,7 @@ import {
   StyleSheet,
   SafeAreaView,
   FlatList,
+  View,
   Text,
   TouchableOpacity,
   Image,
@@ -17,9 +18,10 @@ const EventsNearYou = () => {
   const DATA = [
     {
       id: "0",
-      title: "STI Testing",
-      img: require("../assets/events-near-you/sti.png"),
-      date: "06/20",
+
+      title: "Neurobiology of Trauma and Healing",
+      img: require("../assets/events-near-you/mental.png"),
+      date: "12/07",
     },
     {
       id: "1",
@@ -29,9 +31,9 @@ const EventsNearYou = () => {
     },
     {
       id: "2",
-      title: "Mental Health Peer Support Group",
-      img: require("../assets/events-near-you/mental.png"),
-      date: "08/01",
+      title: "STI Testing",
+      img: require("../assets/events-near-you/sti.png"),
+      date: "06/20",
     },
   ];
 
@@ -54,8 +56,11 @@ const EventsNearYou = () => {
 
   /* Simply renders a pressable component with the title displayed */
   const Item = ({ title, img, date }) => (
+
     <TouchableOpacity style={[styles.container, styles.shadowProp]}>
-      <Text>{date}</Text>
+    <View style={{alignSelf: "center", top: 0,}}>
+    <Text style={{paddingBottom: 0, alignSelf: "center", paddingBottom: 10,}}>{date}</Text>
+</View>
       <Image
         source={img}
         style={{ resizeMode: "contain", height: 80, width: 200 }}
@@ -97,10 +102,9 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     flexDirection: "column",
-    justifyContent: "center",
     marginHorizontal: 10,
     marginBottom: 10,
-    marginTop: 20,
+    marginTop: 5,
     padding: 10,
     width: 200,
     height: 200,

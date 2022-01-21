@@ -84,19 +84,18 @@ const EmergencyScreen = ({ navigation }) => {
           </View>
 
           <View style={styles.rowblue}>
-          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+18002738255}`)}>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+13017413442}`)}>
           <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
           </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
-            Suicide Hotline
+            CARE Crisis Line
             </Text>
             <Text style={styles.entrysubtitle}>
-            National Suicide Prevention Line
+            CARE to Stop Violence
             </Text>
             </View>
           </View>
-
 
           <View style={styles.rowwhite}>
           <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+18779247758}`)}>
@@ -112,19 +111,22 @@ const EmergencyScreen = ({ navigation }) => {
             </View>
           </View>
 
+
+
           <View style={styles.rowblue}>
-          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+13017413442}`)}>
+          <TouchableOpacity style={styles.phonebox} onPress={() => Linking.openURL(`tel:${+18002738255}`)}>
           <Icon name="phone" color={"#4a4a4a"} size={30} style={{margin: 10,}}/>
           </TouchableOpacity>
             <View style={styles.entry}>
             <Text style={styles.entrytitle}>
-            CARE Crisis Line
+            Suicide Hotline
             </Text>
             <Text style={styles.entrysubtitle}>
-            CARE to Stop Violence
+            National Suicide Prevention Line
             </Text>
             </View>
           </View>
+
 
 
 
